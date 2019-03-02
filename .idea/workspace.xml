@@ -2,15 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1d4c5273-f853-4faf-9578-ee341a6bd154" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/assets/scss/pages/_homepage.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/components/_image-text-split.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/partials/image-text-overlay.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/partials/image-text-split.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/scss/_base.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/_base.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/scss/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/app.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/scss/layout/_navigation.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/layout/_navigation.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/DefaultController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/DefaultController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/default/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/default/homepage.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/pages/_homepage.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/pages/_homepage.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/default/homepage.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/default/homepage.html.twig" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -40,9 +40,9 @@
           <entry key="local" value="1" />
           <entry key="lock" value="1" />
           <entry key="php" value="3" />
-          <entry key="scss" value="22" />
+          <entry key="scss" value="24" />
           <entry key="test" value="1" />
-          <entry key="twig" value="4" />
+          <entry key="twig" value="6" />
           <entry key="yaml" value="1" />
         </counts>
       </usages-collector>
@@ -54,8 +54,8 @@
           <entry key="JavaScript" value="17" />
           <entry key="PHP" value="3" />
           <entry key="PLAIN_TEXT" value="4" />
-          <entry key="SCSS" value="22" />
-          <entry key="Twig" value="4" />
+          <entry key="SCSS" value="24" />
+          <entry key="Twig" value="6" />
           <entry key="YAML" value="1" />
         </counts>
       </usages-collector>
@@ -65,8 +65,8 @@
           <entry key="json" value="2" />
           <entry key="local" value="28" />
           <entry key="php" value="182" />
-          <entry key="scss" value="3013" />
-          <entry key="twig" value="998" />
+          <entry key="scss" value="3662" />
+          <entry key="twig" value="1243" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -75,8 +75,8 @@
           <entry key="JavaScript" value="1690" />
           <entry key="PHP" value="182" />
           <entry key="PLAIN_TEXT" value="28" />
-          <entry key="SCSS" value="3013" />
-          <entry key="Twig" value="998" />
+          <entry key="SCSS" value="3662" />
+          <entry key="Twig" value="1243" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.php.new.class">
@@ -105,21 +105,40 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/default/homepage.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="30" selection-start-column="30" selection-end-column="30" />
+            <state relative-caret-position="210">
+              <caret line="14" column="55" selection-start-line="14" selection-start-column="55" selection-end-line="14" selection-end-column="55" />
               <folding>
                 <element signature="e#12#26#0#Twig" expanded="true" />
+                <element signature="e#663#698#0#Twig" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/partials/image-text-split.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="12" column="81" selection-start-line="12" selection-start-column="81" selection-end-line="12" selection-end-column="81" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/assets/scss/components/_image-text-split.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="930">
+              <caret line="62" column="45" lean-forward="true" selection-start-line="62" selection-start-column="45" selection-end-line="62" selection-end-column="45" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/scss/pages/_homepage.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" column="22" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
+            <state relative-caret-position="135">
+              <caret line="9" column="8" selection-start-line="9" selection-start-column="8" selection-end-line="11" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -127,8 +146,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/scss/layout/_navigation.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" column="16" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="16" />
+            <state relative-caret-position="630">
+              <caret line="42" column="34" selection-start-line="42" selection-start-column="34" selection-end-line="42" selection-end-column="34" />
             </state>
           </provider>
         </entry>
@@ -136,8 +155,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/scss/_base.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="4" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="4" />
+            <state relative-caret-position="90">
+              <caret line="6" column="18" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -147,18 +166,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="315">
               <caret line="21" column="8" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="35" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/js/app.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="25" column="49" selection-start-line="25" selection-start-column="49" selection-end-line="25" selection-end-column="49" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -187,12 +194,14 @@
         <option value="$PROJECT_DIR$/assets/scss/components/_buttons.scss" />
         <option value="$PROJECT_DIR$/assets/js/app.js" />
         <option value="$PROJECT_DIR$/src/Controller/DefaultController.php" />
+        <option value="$PROJECT_DIR$/templates/base.html.twig" />
+        <option value="$PROJECT_DIR$/assets/scss/pages/_homepage.scss" />
+        <option value="$PROJECT_DIR$/assets/scss/layout/_navigation.scss" />
         <option value="$PROJECT_DIR$/assets/scss/app.scss" />
         <option value="$PROJECT_DIR$/templates/default/homepage.html.twig" />
-        <option value="$PROJECT_DIR$/templates/base.html.twig" />
+        <option value="$PROJECT_DIR$/templates/partials/image-text-split.html.twig" />
         <option value="$PROJECT_DIR$/assets/scss/_base.scss" />
-        <option value="$PROJECT_DIR$/assets/scss/layout/_navigation.scss" />
-        <option value="$PROJECT_DIR$/assets/scss/pages/_homepage.scss" />
+        <option value="$PROJECT_DIR$/assets/scss/components/_image-text-split.scss" />
       </list>
     </option>
   </component>
@@ -372,6 +381,17 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="Controller" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="gf_loose_reins" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gf_loose_reins" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="gf_loose_reins" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gf_loose_reins" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="partials" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -411,18 +431,18 @@
       <option name="presentableId" value="Default" />
       <updated>1551517619790</updated>
       <workItem from="1551517620895" duration="11201000" />
-      <workItem from="1551529650883" duration="25181000" />
+      <workItem from="1551529650883" duration="29552000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="36382000" />
+    <option name="totallyTimeSpent" value="40753000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="5" y="0" width="1706" height="1407" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14580803" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.14580803" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -444,7 +464,7 @@
       <window_info anchor="right" id="Database" order="3" />
     </layout>
     <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20408164" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14580803" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -458,7 +478,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="TypeScript" order="10" />
-      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.23880596" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.23880596" />
       <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -601,35 +621,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/scss/app.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="25" selection-start-line="10" selection-start-column="25" selection-end-line="10" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/scss/components/_buttons.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
           <caret line="21" column="8" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/scss/_base.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="4" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/default/homepage.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="30" selection-start-column="30" selection-end-column="30" />
-          <folding>
-            <element signature="e#12#26#0#Twig" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -640,17 +635,60 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/assets/scss/app.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/partials/image-text-overlay.html.twig">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/default/homepage.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="55" selection-start-line="14" selection-start-column="55" selection-end-line="14" selection-end-column="55" />
+          <folding>
+            <element signature="e#12#26#0#Twig" expanded="true" />
+            <element signature="e#663#698#0#Twig" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/partials/image-text-split.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="81" selection-start-line="12" selection-start-column="81" selection-end-line="12" selection-end-column="81" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/scss/_base.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="18" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/assets/scss/layout/_navigation.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="16" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="16" />
+        <state relative-caret-position="630">
+          <caret line="42" column="34" selection-start-line="42" selection-start-column="34" selection-end-line="42" selection-end-column="34" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/scss/pages/_homepage.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="22" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
+        <state relative-caret-position="135">
+          <caret line="9" column="8" selection-start-line="9" selection-start-column="8" selection-end-line="11" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/scss/components/_image-text-split.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="930">
+          <caret line="62" column="45" lean-forward="true" selection-start-line="62" selection-start-column="45" selection-end-line="62" selection-end-column="45" />
         </state>
       </provider>
     </entry>

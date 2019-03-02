@@ -39,6 +39,7 @@
     }
 
     @include media-breakpoint-down(md){
+        position: absolute;
         background-color: #504b23;
     }
 

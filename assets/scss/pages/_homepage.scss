@@ -6,6 +6,10 @@
         background-position: center;
         background-size: cover;
         height: 100vh;
+
+        @include media-breakpoint-down(md){
+            background-image: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0),rgba(0,0,0,0),rgba(0,0,0,0)),url('images/homepage.jpg');
+        }
     }
 
     .homepage-banner {
