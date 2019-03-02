@@ -1,0 +1,85 @@
+.header-container {
+
+    a {
+        text-decoration: none;
+        color: #fff;
+        font-weight: 300;
+        text-transform: uppercase;
+    }
+
+    .top-nav-container {
+        display: flex;
+        justify-content: flex-end;
+
+        .top-nav {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            list-style: none;
+            padding: 0;
+            margin-bottom: 0;
+            width: 550px;
+            height: 50px;
+            transition: height 0.2s ease-in-out;
+
+            @include media-breakpoint-down(lg){
+                height: 30px;
+            }
+
+            a {
+                font-size: 1.125rem;
+
+                @include media-breakpoint-down(lg){
+                    font-size: 1rem;
+                }
+            }
+
+
+        }
+    }
+
+    .logo-container {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 1rem;
+        transition: margin-bottom 0.2s ease-in-out;
+
+        @include media-breakpoint-down(lg){
+            margin-bottom: 0;
+        }
+
+        .main-logo {
+            width: 450px;
+            transition: width 0.2s ease-in-out;
+
+            @include media-breakpoint-down(lg){
+                width: 250px;
+            }
+        }
+    }
+
+    .main-navigation-container {
+        display: flex;
+        justify-content: center;
+
+        .main-navigation {
+            display: flex;
+            justify-content: space-around;
+            list-style: none;
+            padding: 0;
+            width: 75%;
+
+            a {
+                font-size: 1.25rem;
+
+                @include media-breakpoint-down(lg){
+                    font-size: 1.125rem;
+                }
+            }
+        }
+    }
+}
+
+@include media-breakpoint-down(xl){
+
+}

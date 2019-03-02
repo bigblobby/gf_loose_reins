@@ -3,10 +3,45 @@
     <head>
         <meta charset="UTF-8">
         <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
+        {% block stylesheets %}
+            <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400" rel="stylesheet">
+            <link rel="stylesheet" href="{{ asset('build/app.css') }}">
+        {% endblock %}
     </head>
     <body>
-        {% block body %}{% endblock %}
+
+
+        <nav class="header-container">
+            <div class="top-nav-container">
+                <ul class="top-nav">
+                    <li><a href="#">Book</a></li>
+                    <li><a href="#">Before you book</a></li>
+                    <li><a href="#">Offers</a></li>
+                    <li><a href="#">Gallery</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div class="logo-container">
+                <img class="main-logo" src="{{ asset('images/LooseReinsLogo.svg') }}" alt="logo">
+            </div>
+            <div class="main-navigation-container">
+                <ul class="main-navigation">
+                    <li><a href="#">Cabins</a></li>
+                    <li><a href="#">Lodges</a></li>
+                    <li><a href="#">Loose reins country</a></li>
+                    <li><a href="#">Out and about</a></li>
+                    <li><a href="#">Pantry</a></li>
+                    <li><a href="#">Loose talk</a></li>
+                    <li><a href="#">Reviews</a></li>
+                </ul>
+            </div>
+        </nav>
+
+
+
+
+        {% block body %}
+        {% endblock %}
         {% block javascripts %}{% endblock %}
     </body>
 </html>
