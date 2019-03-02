@@ -35,4 +35,33 @@ $(document).ready(function(){
     });
 })();
 
+// Close the burger menu when expanding width to desktop width
+(function(){
+    let nav = document.querySelector('.main-navigation');
+
+    window.addEventListener('resize', function(){
+        console.log(window.innerWidth);
+       if(window.innerWidth > 993){
+           console.log(nav.setAttribute("style", ""));
+       }
+    });
+})();
+
+//Navigation stick on scroll
+(function(){
+    let mainNav = document.querySelector('.header-container');
+
+    window.addEventListener('scroll', function(){
+        if(window.scrollY > 1){
+            // mainNav.style.position = 'fixed';
+            // mainNav.style.left = 0;
+            // mainNav.style.right = 0;
+            mainNav.classList.add('scrolling');
+        } else {
+            //mainNav.style.position = 'static';
+            mainNav.classList.remove('scrolling');
+        }
+    });
+})();
+
 

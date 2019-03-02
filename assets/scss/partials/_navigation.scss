@@ -1,5 +1,39 @@
 .header-container {
     position: relative;
+    transition: all 0.2s ease-in-out;
+
+    // WHEN SCROLLING
+    &.scrolling{
+        @include media-breakpoint-up(lg){
+            background-color: #504b23;
+            position: fixed;
+            left: 0;
+            right: 0;
+
+            .top-nav-container {
+                .top-nav {
+                    height: 40px;
+                    transition: all 0.2s ease-in-out;
+                }
+            }
+
+            .logo-container {
+                margin-bottom: 0;
+                .main-logo {
+                    width: 250px;
+                    margin-top: -1.5rem;
+                    transition: all 0.2s ease-in-out;
+                }
+            }
+
+            .main-navigation-container {
+                .main-navigation {
+                    margin-bottom: 0.5rem;
+                    transition: all 0.2s ease-in-out;
+                }
+            }
+        }
+    }
 
     @include media-breakpoint-down(md){
         background-color: #504b23;
@@ -95,6 +129,7 @@
             padding: 0;
             max-width: 1250px;
             width: 75%;
+            height: 30px;
             transition: height 0.3s;
 
             @include media-breakpoint-down(md){
