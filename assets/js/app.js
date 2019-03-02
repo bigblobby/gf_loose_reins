@@ -9,12 +9,30 @@
 require('../scss/app.scss');
 
 // Need jQuery? Install it with "yarn add jquery", then uncomment to require it.
-const $ = require('jquery');
+//const $ = require('jquery');
+import $ from 'jquery';
 
 $(document).ready(function(){
 
-    // jQuery here
-    console.log('Hello Webpack Encore! Edit me in assets/js/app.js');
+    $('.mobile-menu-btn').on('click', function(){
 
+        //$('.main-navigation-container').toggleClass('active');
+
+    });
 });
+
+// Navigation Burger Menu
+(function(){
+    let nav = document.querySelector('.main-navigation');
+    let btn = document.querySelector('.mobile-menu-btn');
+
+    btn.addEventListener('click', function(e){
+        if(nav.style.height){
+            nav.style.height = null;
+        } else {
+            nav.style.height = nav.scrollHeight + 'px';
+        }
+    });
+})();
+
 

@@ -1,4 +1,10 @@
 .header-container {
+    position: relative;
+
+    @include media-breakpoint-down(md){
+        background-color: #504b23;
+    }
+
 
     a {
         text-decoration: none;
@@ -10,6 +16,10 @@
     .top-nav-container {
         display: flex;
         justify-content: flex-end;
+
+        @include media-breakpoint-down(md){
+            display: none;
+        }
 
         .top-nav {
             display: flex;
@@ -28,13 +38,16 @@
 
             a {
                 font-size: 1.125rem;
+                transition: color 0.2s ease-in-out;
+
+                &:hover {
+                    color: #a1c349;
+                }
 
                 @include media-breakpoint-down(lg){
                     font-size: 1rem;
                 }
             }
-
-
         }
     }
 
@@ -48,15 +61,28 @@
             margin-bottom: 0;
         }
 
+        @include media-breakpoint-down(md){
+            padding: 1rem 0;
+        }
+
         .main-logo {
             width: 450px;
             transition: width 0.2s ease-in-out;
 
             @include media-breakpoint-down(lg){
+                transition: width 0s;
                 width: 250px;
+            }
+
+            @include media-breakpoint-down(md){
+                max-width: 520px;
+                width: 100%;
+                height: 50px;
+                padding: 0 0.5rem;
             }
         }
     }
+
 
     .main-navigation-container {
         display: flex;
@@ -67,19 +93,81 @@
             justify-content: space-around;
             list-style: none;
             padding: 0;
+            max-width: 1250px;
             width: 75%;
+            transition: height 0.3s;
 
-            a {
-                font-size: 1.25rem;
+            @include media-breakpoint-down(md){
+                display: block;
+                overflow-y: hidden;
+                height: 0;
+            }
 
-                @include media-breakpoint-down(lg){
-                    font-size: 1.125rem;
+            .mobile-nav-item{
+                display: none;
+
+                @include media-breakpoint-down(md){
+                    display: block;
+                }
+            }
+
+            li {
+                @include media-breakpoint-down(md){
+                    width: 100%;
+                }
+
+                a {
+                    font-size: 1.25rem;
+                    padding: 0.5rem;
+                    transition: background-color 0.2s ease-in-out;
+
+                    &:hover {
+                        background-color: rgba(161,195,73,0.7);
+                    }
+
+                    @include media-breakpoint-down(lg){
+                        font-size: 1.125rem;
+                    }
+
+                    @include media-breakpoint-down(md){
+                        display: block;
+                        text-align: center;
+                        padding: 0.5rem 0;
+                    }
                 }
             }
         }
     }
-}
 
-@include media-breakpoint-down(xl){
+    .mobile-menu-btn {
+        display: none;
 
+        @include media-breakpoint-down(md){
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%, -30%);
+            display: block;
+            height: 40px;
+            width: 90px;
+            border: none;
+            padding-bottom: 0.5rem;
+            background-color: #504b23;
+            //-webkit-clip-path: polygon(0 0,100% 0,78% 100%,22% 100%);
+            clip-path: polygon(0 0,100% 0,78% 100%,22% 100%);
+
+            &:focus{
+                outline: 0;
+            }
+        }
+
+        .menu-line {
+            @include media-breakpoint-down(md){
+                display: block;
+                background: #fff;
+                height: 2px;
+                width: 20px;
+                margin: 0.25rem auto;
+            }
+        }
+    }
 }
