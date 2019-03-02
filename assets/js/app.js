@@ -29,8 +29,10 @@ $(document).ready(function(){
     btn.addEventListener('click', function(e){
         if(nav.style.height){
             nav.style.height = null;
+            btn.classList.remove('active');
         } else {
             nav.style.height = nav.scrollHeight + 'px';
+            btn.classList.add('active');
         }
     });
 })();
