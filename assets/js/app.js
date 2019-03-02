@@ -23,7 +23,7 @@ $(document).ready(function(){
 
 // Navigation Burger Menu
 (function(){
-    let nav = document.querySelector('.main-navigation');
+    let nav = document.querySelector('.bottom-nav');
     let btn = document.querySelector('.mobile-menu-btn');
 
     btn.addEventListener('click', function(e){
@@ -39,7 +39,7 @@ $(document).ready(function(){
 
 // Close the burger menu when expanding width to desktop width (and change 'x' back to 3 lines)
 (function(){
-    let nav = document.querySelector('.main-navigation');
+    let nav = document.querySelector('.bottom-nav');
     let btn = document.querySelector('.mobile-menu-btn');
 
     window.addEventListener('resize', function(){

@@ -6,7 +6,7 @@
         <title>{% block title %}Welcome!{% endblock %}</title>
         {% block stylesheets %}
             <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400" rel="stylesheet">
-            <link href="https://fonts.googleapis.com/css?family=Lora:400,400i" rel="stylesheet">
+            <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700" rel="stylesheet">
             <link rel="stylesheet" href="{{ asset('build/app.css') }}">
         {% endblock %}
     </head>
@@ -26,8 +26,8 @@
             <div class="logo-container">
                 <img class="main-logo" src="{{ asset('images/LooseReinsLogo.svg') }}" alt="logo">
             </div>
-            <div class="main-navigation-container">
-                <ul class="main-navigation">
+            <div class="bottom-nav-container">
+                <ul class="bottom-nav">
                     <li><a href="#">Cabins</a></li>
                     <li><a href="#">Lodges</a></li>
                     <li><a href="#">Loose reins country</a></li>
@@ -48,8 +48,6 @@
                 <span class="menu-line"></span>
             </button>
         </nav>
-
-        <div style="height: 1500px; background-color: #4e555b"></div>
 
         {% block sticky_book_now %}
             <div class="booking-bar">

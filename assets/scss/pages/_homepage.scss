@@ -1,0 +1,41 @@
+.homepage-header {
+    position: relative;
+
+    .homepage-image-container {
+        background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0),rgba(0,0,0,0),rgba(0,0,0,0)),url('images/homepage.jpg');
+        background-position: center;
+        background-size: cover;
+        height: 100vh;
+    }
+
+    .homepage-banner {
+        background-color: rgba(161,195,73, 1);
+        padding: 2rem;
+
+        @include media-breakpoint-up(lg){
+            position: absolute;
+            bottom: 10%;
+            left: 5%;
+            width: 500px;
+            padding: 3rem 2.7rem;
+            background-color: rgba(161,195,73, 0.7);
+        }
+
+        h1, p {
+            color: #fff;
+        }
+
+        h1 {
+            font-family: 'Lora', serif;
+            font-size: 3rem;
+            font-weight: 700;
+            line-height: 1.1;
+        }
+
+        p {
+            font-size: 1.25rem;
+            font-weight: 300;
+        }
+    }
+}
+

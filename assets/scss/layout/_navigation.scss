@@ -1,5 +1,8 @@
 .header-container {
-    position: relative;
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    right: 0;
     transition: all 0.2s ease-in-out;
 
     // WHEN SCROLLING
@@ -26,8 +29,8 @@
                 }
             }
 
-            .main-navigation-container {
-                .main-navigation {
+            .bottom-nav-container {
+                .bottom-nav {
                     margin-bottom: 0.5rem;
                     transition: all 0.2s ease-in-out;
                 }
@@ -118,11 +121,11 @@
     }
 
 
-    .main-navigation-container {
+    .bottom-nav-container {
         display: flex;
         justify-content: center;
 
-        .main-navigation {
+        .bottom-nav {
             display: flex;
             justify-content: space-around;
             list-style: none;
