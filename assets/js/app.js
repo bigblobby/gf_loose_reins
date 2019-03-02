@@ -56,12 +56,8 @@ $(document).ready(function(){
 
     window.addEventListener('scroll', function(){
         if(window.scrollY > 1){
-            // mainNav.style.position = 'fixed';
-            // mainNav.style.left = 0;
-            // mainNav.style.right = 0;
             mainNav.classList.add('scrolling');
         } else {
-            //mainNav.style.position = 'static';
             mainNav.classList.remove('scrolling');
         }
     });

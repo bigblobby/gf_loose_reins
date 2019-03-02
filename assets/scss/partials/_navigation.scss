@@ -96,7 +96,7 @@
         }
 
         @include media-breakpoint-down(md){
-            padding: 1rem 0;
+            padding: 1.5rem 0 0.5rem 0;
         }
 
         .main-logo {
@@ -111,7 +111,7 @@
             @include media-breakpoint-down(md){
                 max-width: 520px;
                 width: 100%;
-                height: 50px;
+                height: 100%;
                 padding: 0 0.5rem;
             }
         }
