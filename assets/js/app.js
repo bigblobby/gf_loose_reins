@@ -63,4 +63,14 @@ $(document).ready(function(){
     });
 })();
 
+// Sticky 'book now' button
+(function(){
+    let bookNowBtn = document.querySelector('.booking-button');
+    let bookingBar = document.querySelector('.booking-bar');
+
+    bookNowBtn.addEventListener('click', function(){
+        bookingBar.classList.toggle('active');
+    });
+})();
+
 

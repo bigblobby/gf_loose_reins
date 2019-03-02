@@ -1,0 +1,34 @@
+.booking-bar {
+    position: fixed;
+    z-index: 50;
+    left: 0;
+    right: 0;
+    bottom: -445px;
+    height: 450px;
+    background-color: #a1c349;
+    transition: bottom 0.4s ease-in-out;
+
+    &.active {
+        bottom: 0;
+    }
+
+    .booking-button {
+        position: absolute;
+        left: 50%;
+        top: -45px;
+        transform: translateX(-50%);
+        clip-path: polygon(12% 0%,88% 0%,100% 100%,0% 100%);
+        width: 250px;
+        font-family: 'Lora', serif;
+        font-style: italic;
+        font-size: 1.25rem;
+        border: none;
+        background-color: #a1c349;
+        color: #fff;
+        padding: 0.5rem 0 1rem 0;
+
+        &:focus {
+            outline: none;
+        }
+    }
+}
