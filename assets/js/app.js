@@ -37,14 +37,15 @@ $(document).ready(function(){
     });
 })();
 
-// Close the burger menu when expanding width to desktop width
+// Close the burger menu when expanding width to desktop width (and change 'x' back to 3 lines)
 (function(){
     let nav = document.querySelector('.main-navigation');
+    let btn = document.querySelector('.mobile-menu-btn');
 
     window.addEventListener('resize', function(){
-        console.log(window.innerWidth);
        if(window.innerWidth > 993){
-           console.log(nav.setAttribute("style", ""));
+           nav.setAttribute("style", "");
+           btn.classList.remove('active');
        }
     });
 })();
