@@ -32,13 +32,7 @@
             }
 
             .social-item {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                background: #fff;
-                border-radius: 50%;
-                width: 45px;
-                height: 45px;
+                @include social-icon;
 
                 a {
                     padding: 1rem;
@@ -47,6 +41,10 @@
                         i {
                             color: #a1c349;
                         }
+                    }
+
+                    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+                        padding: 0.5rem
                     }
 
                     i {

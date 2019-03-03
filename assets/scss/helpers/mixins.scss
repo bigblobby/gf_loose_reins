@@ -1,0 +1,9 @@
+@mixin social-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+}
