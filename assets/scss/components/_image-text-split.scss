@@ -3,8 +3,8 @@
     height: 700px;
 
     @include media-breakpoint-down(md){
+        display: block;
         height: 100%;
-        flex-direction: column;
     }
 
     .split-left-text,
@@ -48,11 +48,12 @@
             transform: translate(-50%, -50%);
 
             @include media-breakpoint-down(md){
-                position: relative;
-                top: unset;
-                left: unset;
+                position: static;
+                top: auto;
+                left: auto;
                 max-width: 100%;
-                transform: translate(0, 0);
+                //transform: translate(0, 0);
+                transform: none;
             }
         }
     }

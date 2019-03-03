@@ -13,6 +13,7 @@
     </head>
     <body>
 
+        {#-------------MAIN NAVIGATION-------------#}
 
         <nav class="header-container">
             <div class="top-nav-container">
@@ -50,14 +51,11 @@
             </button>
         </nav>
 
-        {% block sticky_book_now %}
-            <div class="booking-bar">
-                <button class="booking-button">Book Now</button>
-                <div></div>
-            </div>
-        {% endblock %}
+        {#------------CONTENT-------------#}
 
         {% block body %}{% endblock %}
+
+        {#------------FOOTER--------------#}
 
         <footer class="footer">
             <div class="left-container">
@@ -88,6 +86,21 @@
                 <p class="copyright">Website by Tom Dempster</p>
             </div>
         </footer>
+
+        {#---------------STICKY BOOK NOW BUTTON-----------------#}
+
+        {% block sticky_book_now %}
+            <div class="booking-bar">
+                <button class="booking-button">Book Now</button>
+                <div></div>
+            </div>
+        {% endblock %}
+
+        {#----------------STICKY SOCIAL ICONS-------------------#}
+
+        {% block sticky_social_icons %}
+
+        {% endblock %}
 
         {% block javascripts %}
             <script src="{{ asset('build/runtime.js') }}"></script>

@@ -12,6 +12,8 @@
     }
 
     img {
+        // NOTE: position, top, left and transform are not actually needed, a very
+        // similar effect is given without these, the image is just positioned slightly differently
         position: absolute;
         top: 50%;
         left: 50%;
@@ -22,8 +24,8 @@
 
         @include media-breakpoint-down(md){
             position: relative;
-            top: unset;
-            left: unset;
+            top: auto;
+            left: auto;
             transform: none;
             width: 100%;
         }
@@ -56,10 +58,10 @@
 
         @include media-breakpoint-down(md){
             position: relative;
-            top: unset;
-            right: unset;
-            bottom: unset;
-            left: unset;
+            top: auto;
+            right: auto;
+            bottom: auto;
+            left: auto;
             padding: 2rem 3rem;
         }
 

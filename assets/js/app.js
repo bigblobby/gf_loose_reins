@@ -14,10 +14,12 @@ import $ from 'jquery';
 
 $(document).ready(function(){
 
-    $('.mobile-menu-btn').on('click', function(){
-
-        //$('.main-navigation-container').toggleClass('active');
-
+    $(window).on('scroll', function(){
+       if(window.pageYOffset > 1) {
+           $('.header-container').addClass('scrolling');
+       } else {
+           $('.header-container').removeClass('scrolling');
+       }
     });
 });
 
@@ -54,13 +56,13 @@ $(document).ready(function(){
 (function(){
     let mainNav = document.querySelector('.header-container');
 
-    window.addEventListener('scroll', function(){
-        if(window.scrollY > 1){
-            mainNav.classList.add('scrolling');
-        } else {
-            mainNav.classList.remove('scrolling');
-        }
-    });
+    // window.addEventListener('scroll', function(){
+    //     if(window.scrollY > 1){
+    //         mainNav.classList.add('scrolling');
+    //     } else {
+    //         mainNav.classList.remove('scrolling');
+    //     }
+    // });
 })();
 
 // Sticky 'book now' button
@@ -69,7 +71,13 @@ $(document).ready(function(){
     let bookingBar = document.querySelector('.booking-bar');
 
     bookNowBtn.addEventListener('click', function(){
-        bookingBar.classList.toggle('active');
+        if(bookingBar.classList.contains('active')){
+            bookingBar.classList.remove('active');
+            bookNowBtn.textContent = 'Book Now';
+        } else {
+            bookingBar.classList.add('active');
+            bookNowBtn.textContent = 'Close';
+        }
     });
 })();
 
