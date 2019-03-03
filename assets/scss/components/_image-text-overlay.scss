@@ -82,6 +82,11 @@
             color: #fff;
             padding: 0.75rem 3rem;
             border: 1px solid transparent;
+            transition: all 0.2s ease-out;
+
+            &:hover {
+                background-color: #de6d4d;
+            }
         }
     }
 }

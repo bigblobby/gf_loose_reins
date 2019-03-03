@@ -1,0 +1,54 @@
+.blog-article-preview {
+    background-image: linear-gradient(rgba(222,109,77,0.7),rgba(222,109,77,0.7)),url("images/homepage/article-preview-banner.jpg");
+    background-position: center;
+    background-size: cover;
+    padding: 5rem;
+
+    @include media-breakpoint-down(sm){
+        padding: 3rem;
+    }
+
+    @include media-breakpoint-down(xs){
+        padding: 2rem;
+    }
+
+    .blog-container {
+        max-width: 600px;
+        margin: 0 auto;
+
+        h2,
+        h3,
+        span,
+        p,
+        a {
+            color: #fff;
+        }
+
+        h3 {
+            font-family: 'Lora', serif;
+            font-size: 1.5rem;
+            margin-bottom: 0;
+        }
+
+        .date-published {
+            font-size: 1.25rem;
+            font-weight: 300;
+            margin-bottom: 1.5rem;
+        }
+
+        .read-more-container {
+            text-align: center;
+            a {
+                display: inline-block;
+                font-family: 'Lora', serif;
+                font-style: italic;
+                font-size: 1.25rem;
+                text-align: center;
+                text-decoration: none;
+                padding: 0.75rem 4.9rem;
+                margin: 0 auto;
+                border: 1px solid #fff;
+            }
+        }
+    }
+}

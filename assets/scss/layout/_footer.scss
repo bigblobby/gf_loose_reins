@@ -103,6 +103,11 @@
             margin-left: auto;
             margin-bottom: 1rem;
             border: 1px solid #fff;
+            transition: all 0.2s ease-out;
+
+            &:hover {
+                background-color: #de6d4d;
+            }
 
             @include media-breakpoint-down(md){
                 margin-right: auto;

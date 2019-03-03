@@ -1,8 +1,13 @@
 .sticky-social-icons {
     position: fixed;
+    z-index: 30;
     right: 1rem;
     top: 50%;
     transform: translateY(-50%);
+
+    @include media-breakpoint-down(md){
+        display: none;
+    }
 
     .social-item {
         @include social-icon;
@@ -33,5 +38,4 @@
             }
         }
     }
-
 }
