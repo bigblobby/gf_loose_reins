@@ -20,6 +20,12 @@ $(document).ready(function(){
        } else {
            $('.header-container').removeClass('scrolling');
        }
+
+       if(window.innerHeight + window.pageYOffset >= document.body.offsetHeight - 200){
+           $('.sticky-social-icons').addClass('active');
+       } else {
+           $('.sticky-social-icons').removeClass('active');
+       }
     });
 });
 
