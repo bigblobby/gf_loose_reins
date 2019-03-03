@@ -7,6 +7,7 @@
         {% block stylesheets %}
             <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400" rel="stylesheet">
             <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700" rel="stylesheet">
+            <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
             <link rel="stylesheet" href="{{ asset('build/app.css') }}">
         {% endblock %}
     </head>
@@ -57,6 +58,37 @@
         {% endblock %}
 
         {% block body %}{% endblock %}
+
+        <footer class="footer">
+            <div class="left-container">
+                <address>
+                    Loose Reins,<br>
+                    Ridgeway Farm,<br>
+                    Shillingstone,<br>
+                    Dorset,<br>
+                    DT11 0TF
+                </address>
+            </div>
+            <div class="right-container">
+                <div class="social-container">
+                    <div class="social-item"><a href="https://www.facebook.com/LooseReins" target="_blank"><i class="fab fa-facebook-f"></i></a></div>
+                    <div class="social-item"><a href="https://twitter.com/loosereins" target="_blank"><i class="fab fa-twitter"></i></a></div>
+                    <div class="social-item"><a href="https://www.tripadvisor.co.uk/Hotel_Review-g2052572-d10154928-Reviews-Loose_Reins-Shillingstone_Blandford_Forum_Dorset_England.html" target="_blank"><i class="fab fa-tripadvisor"></i></a></div>
+                    <div class="social-item"><a href="https://www.instagram.com/loosereinsdorset/" target="_blank"><i class="fab fa-instagram"></i></a></div>
+                </div>
+                <p class="contact-number">01258 863533</p>
+                <div class="footer-nav">
+                    <a href="#">FAQs</a>
+                    <a href="#">Accessibility Guide</a>
+                    <a href="#">Terms &amp; Conditions</a>
+                    <a href="#">Eco Policy</a>
+                    <a href="#">Privacy</a>
+                </div>
+                <button class="signup">Signup</button>
+                <p class="copyright">Website by Tom Dempster</p>
+            </div>
+        </footer>
+
         {% block javascripts %}
             <script src="{{ asset('build/runtime.js') }}"></script>
             <script src="{{ asset('build/app.js') }}"></script>
