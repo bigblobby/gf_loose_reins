@@ -1,0 +1,12 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+
+    <div style="height: 500px; background-color: gray"></div>
+    {# @var link \App\Entity\Page #}
+    {% for link in subLinks %}
+        <p>{{ link.title }}</p>
+    {% endfor %}
+    <div style="height: 500px; background-color: gray"></div>
+    
+{% endblock %}
