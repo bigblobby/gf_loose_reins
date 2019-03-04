@@ -14,6 +14,8 @@ import $ from 'jquery';
 
 $(document).ready(function(){
 
+    // SCROLL EVENTS:
+    // Stick the navigation to the top on scroll
     $(window).on('scroll', function(){
        if(window.pageYOffset > 1) {
            $('.header-container').addClass('scrolling');
@@ -21,6 +23,7 @@ $(document).ready(function(){
            $('.header-container').removeClass('scrolling');
        }
 
+       // Hide the sticky social icons when close to the footer
        if(window.innerHeight + window.pageYOffset >= document.body.offsetHeight - 200){
            $('.sticky-social-icons').addClass('active');
        } else {
@@ -56,19 +59,6 @@ $(document).ready(function(){
            btn.classList.remove('active');
        }
     });
-})();
-
-//Navigation stick on scroll
-(function(){
-    let mainNav = document.querySelector('.header-container');
-
-    // window.addEventListener('scroll', function(){
-    //     if(window.scrollY > 1){
-    //         mainNav.classList.add('scrolling');
-    //     } else {
-    //         mainNav.classList.remove('scrolling');
-    //     }
-    // });
 })();
 
 // Sticky 'book now' button
