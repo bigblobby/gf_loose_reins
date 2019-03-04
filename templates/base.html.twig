@@ -30,13 +30,12 @@
             </div>
             <div class="bottom-nav-container">
                 <ul class="bottom-nav">
-                    <li><a href="#">Cabins</a></li>
-                    <li><a href="#">Lodges</a></li>
-                    <li><a href="#">Loose reins country</a></li>
-                    <li><a href="#">Out and about</a></li>
-                    <li><a href="#">Pantry</a></li>
-                    <li><a href="#">Loose talk</a></li>
-                    <li><a href="#">Reviews</a></li>
+
+                    {# @var link \App\Entity\Navigation #}
+                    {% for link in links %}
+                        <li><a href="{{ link.slug }}">{{ link.title}}</a></li>
+                    {% endfor %}
+
                     <li class="mobile-nav-item"><a href="#">Book</a></li>
                     <li class="mobile-nav-item"><a href="#">Before you book</a></li>
                     <li class="mobile-nav-item"><a href="#">Offers</a></li>

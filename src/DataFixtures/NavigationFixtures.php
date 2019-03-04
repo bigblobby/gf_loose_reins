@@ -8,6 +8,7 @@ use Doctrine\Common\Persistence\ObjectManager;
 
 class NavigationFixtures extends Fixture
 {
+    static $counter = 1;
 
     static $navigationItems = [
         "Cabins",
@@ -24,6 +25,11 @@ class NavigationFixtures extends Fixture
         foreach (self::$navigationItems as $title){
             $navItem = new Navigation();
             $navItem->setTitle($title);
+
+            // Add a reference nav_item#COUNTER#
+            $this->addReference(sprintf('%s_%d', 'nav_item', self::$counter), $navItem);
+            self::$counter++;
+
             $manager->persist($navItem);
         }
 
