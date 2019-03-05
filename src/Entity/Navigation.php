@@ -34,6 +34,11 @@ class Navigation
     private $slug;
 
     /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $image;
+
+    /**
      * @ORM\OneToMany(targetEntity="App\Entity\Page", mappedBy="navigation")
      */
     private $pages;
@@ -72,6 +77,16 @@ class Navigation
         return $this;
     }
 
+    public function getImage()
+    {
+        return $this->image;
+    }
+
+    public function setImage($image): void
+    {
+        $this->image = $image;
+    }
+
     /**
      * @return Collection|Page[]
      */
@@ -102,4 +117,6 @@ class Navigation
 
         return $this;
     }
+
+
 }

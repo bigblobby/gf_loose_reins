@@ -34,7 +34,7 @@
                 <ul class="bottom-nav">
 
                     {# @var link \App\Entity\Navigation #}
-                    {% for link in links %}
+                    {% for link in mainNavLinks %}
                         <li><a class="{{ app.request.pathInfo == '/' ~ link.slug ? 'active' : '' }}" href="{{ link.slug }}">{{ link.title}}</a></li>
                     {% endfor %}
 
@@ -50,7 +50,9 @@
                 <div class="dropdown-nav-container">
                     <ul class="dropdown-nav">
                         {% for sublink in subLinks %}
-                            <li><a class="sublink" href="{{ app.request.uri ~ '/' ~ sublink.slug }}">{{ sublink.title }}</a></li>
+                            {% if sublink.title is not empty %}
+                                <li><a class="sublink" href="{{ app.request.uri ~ '/' ~ sublink.slug }}">{{ sublink.title }}</a></li>
+                            {% endif %}
                         {% endfor %}
                     </ul>
                 </div>

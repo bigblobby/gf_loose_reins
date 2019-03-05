@@ -1,0 +1,22 @@
+.page-header {
+    .page-image-container {
+        position: relative;
+
+        &:after {
+            content: '';
+            position: absolute;
+            display: block;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.3),rgba(0,0,0,0),rgba(0,0,0,0));
+            z-index: 5;
+        }
+
+        img {
+            display: block;
+            width: 100%;
+        }
+    }
+}

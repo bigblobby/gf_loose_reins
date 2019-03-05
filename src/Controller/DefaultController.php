@@ -15,10 +15,10 @@ class DefaultController extends AbstractController
      */
     public function homepageAction(EntityManagerInterface $em)
     {
-        $links = $em->getRepository(Navigation::class)->findAll();
+        $mainNavLinks = $em->getRepository(Navigation::class)->findAll();
 
         return $this->render('default/homepage.html.twig', [
-            'links' => $links
+            'mainNavLinks' => $mainNavLinks
         ]);
     }
 
@@ -29,15 +29,16 @@ class DefaultController extends AbstractController
     public function interimPageAction(EntityManagerInterface $em, $slug)
     {
         // Links for main navigation
-        $links = $em->getRepository(Navigation::class)->findAll();
+        $mainNavLinks = $em->getRepository(Navigation::class)->findAll();
 
         // Get the one main link, then find all of its sub links
         $mainLink = $em->getRepository(Navigation::class)->findOneBy(['slug' => $slug]);
         $subLinks = $mainLink->getPages();
 
         return $this->render('default/interim-page.html.twig', [
-            'links' => $links,
-            'subLinks' => $subLinks
+            'mainNavLinks' => $mainNavLinks,
+            'subLinks' => $subLinks,
+            'mainLink' => $mainLink
         ]);
     }
 }
