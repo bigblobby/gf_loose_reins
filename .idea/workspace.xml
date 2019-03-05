@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1d4c5273-f853-4faf-9578-ee341a6bd154" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/assets/scss/helpers/mixins.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/helpers/mixins.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/scss/layout/_navigation.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/layout/_navigation.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/default/interim-page.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/default/interim-page.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DataFixtures/PageFixtures.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataFixtures/PageFixtures.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -36,7 +33,7 @@
           <entry key="json" value="10" />
           <entry key="local" value="2" />
           <entry key="lock" value="1" />
-          <entry key="php" value="14" />
+          <entry key="php" value="16" />
           <entry key="scss" value="66" />
           <entry key="test" value="1" />
           <entry key="twig" value="22" />
@@ -49,7 +46,7 @@
           <entry key="CSS" value="7" />
           <entry key="JSON" value="10" />
           <entry key="JavaScript" value="20" />
-          <entry key="PHP" value="14" />
+          <entry key="PHP" value="16" />
           <entry key="PLAIN_TEXT" value="5" />
           <entry key="SCSS" value="66" />
           <entry key="Twig" value="22" />
@@ -61,7 +58,7 @@
           <entry key="js" value="2171" />
           <entry key="json" value="4" />
           <entry key="local" value="28" />
-          <entry key="php" value="1751" />
+          <entry key="php" value="2136" />
           <entry key="scss" value="7519" />
           <entry key="twig" value="3509" />
           <entry key="yaml" value="3" />
@@ -72,7 +69,7 @@
           <entry key="HTML" value="3" />
           <entry key="JSON" value="4" />
           <entry key="JavaScript" value="2171" />
-          <entry key="PHP" value="1748" />
+          <entry key="PHP" value="2133" />
           <entry key="PLAIN_TEXT" value="28" />
           <entry key="SCSS" value="7519" />
           <entry key="Twig" value="3509" />
@@ -141,7 +138,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/scss/layout/_navigation.scss">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="685">
@@ -166,6 +163,27 @@
               <caret line="11" column="6" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
               <folding>
                 <element signature="e#30#62#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/DataFixtures/NavigationFixtures.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="4" column="26" selection-start-line="4" selection-start-column="26" selection-end-line="4" selection-end-column="26" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/DataFixtures/PageFixtures.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="850">
+              <caret line="76" column="25" selection-start-line="76" selection-start-column="25" selection-end-line="76" selection-end-column="25" />
+              <folding>
+                <element signature="e#36#62#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -216,7 +234,6 @@
         <option value="$PROJECT_DIR$/config/packages/doctrine.yaml" />
         <option value="$PROJECT_DIR$/src/Entity/Page.php" />
         <option value="$PROJECT_DIR$/src/DataFixtures/NavigationFixtures.php" />
-        <option value="$PROJECT_DIR$/src/DataFixtures/PageFixtures.php" />
         <option value="$PROJECT_DIR$/templates/default/homepage.html.twig" />
         <option value="$PROJECT_DIR$/src/Controller/DefaultController.php" />
         <option value="$PROJECT_DIR$/assets/scss/app.scss" />
@@ -224,6 +241,7 @@
         <option value="$PROJECT_DIR$/templates/base.html.twig" />
         <option value="$PROJECT_DIR$/assets/scss/helpers/mixins.scss" />
         <option value="$PROJECT_DIR$/assets/scss/layout/_navigation.scss" />
+        <option value="$PROJECT_DIR$/src/DataFixtures/PageFixtures.php" />
       </list>
     </option>
   </component>
@@ -405,6 +423,12 @@
             <path>
               <item name="gf_loose_reins" type="b2602c69:ProjectViewProjectNode" />
               <item name="gf_loose_reins" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="DataFixtures" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="gf_loose_reins" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gf_loose_reins" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -454,12 +478,12 @@
       <workItem from="1551529650883" duration="46478000" />
       <workItem from="1551635368853" duration="13529000" />
       <workItem from="1551722798052" duration="12386000" />
-      <workItem from="1551809936631" duration="3850000" />
+      <workItem from="1551809936631" duration="5367000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="87444000" />
+    <option name="totallyTimeSpent" value="88961000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-3" y="2" width="1706" height="1407" extended-state="0" />
@@ -737,13 +761,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/DataFixtures/PageFixtures.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="630">
-          <caret line="42" column="43" selection-start-line="42" selection-start-column="43" selection-end-line="42" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Migrations/Version20190304210203.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="540">
@@ -767,23 +784,6 @@
           <caret line="41" column="5" selection-start-line="41" selection-start-column="5" selection-end-line="41" selection-end-column="5" />
           <folding>
             <element signature="e#30#78#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DataFixtures/NavigationFixtures.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="26" selection-start-line="4" selection-start-column="26" selection-end-line="4" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entity/Page.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="6" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
-          <folding>
-            <element signature="e#30#62#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -846,6 +846,33 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="685">
           <caret line="242" column="34" selection-start-line="242" selection-start-column="34" selection-end-line="242" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Entity/Page.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="6" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
+          <folding>
+            <element signature="e#30#62#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DataFixtures/NavigationFixtures.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="26" selection-start-line="4" selection-start-column="26" selection-end-line="4" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DataFixtures/PageFixtures.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="850">
+          <caret line="76" column="25" selection-start-line="76" selection-start-column="25" selection-end-line="76" selection-end-column="25" />
+          <folding>
+            <element signature="e#36#62#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

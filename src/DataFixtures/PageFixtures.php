@@ -15,14 +15,53 @@ class PageFixtures extends Fixture
     static $counter = 1;
 
     static $links = [
-        "Living",
-        "Kitchen & Dining",
-        "Bedrooms",
-        "Bathroom",
-        "Porch",
-        "Children",
-        "Dogs",
-        "Games & WiFi"
+        1 => [
+            "Living",
+            "Kitchen & Dining",
+            "Bedrooms",
+            "Bathroom",
+            "Porch",
+            "Children",
+            "Dogs",
+            "Games & WiFi"
+        ],
+        [
+            "Living",
+            "Kitchen & Dining",
+            "Bedrooms",
+            "Bathroom",
+            "Deck",
+            "Children",
+            "Dogs",
+            "Games & WiFi",
+            "Special Offers"
+        ],
+        [
+            "AONB",
+            "Adventures",
+            "Relax at Loose Reins"
+        ],
+        [
+            "Blackmore Vale",
+            "Jurassic Coast",
+            "Visitor Attractions",
+            "Food & Drink",
+            "Pubs & Restaurants"
+        ],
+        [
+            "Menu",
+            "Shop",
+            "Cellar",
+            "Gifts & Merchandise"
+        ],
+        [
+            ""
+        ],
+        [
+            "Press Reviews",
+            "Visitor Testimonials",
+            "Award"
+        ]
     ];
 
     /** @var Generator */
@@ -35,25 +74,28 @@ class PageFixtures extends Fixture
 
     public function load(ObjectManager $manager)
     {
-        foreach (self::$links as $link){
-            $panels = [
-                "panel-1" => "<h1>Made Up</h1><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, culpa earum ipsa laboriosam libero maiores modi nemo obcaecati odio possimus!</p><button>CLICK</button>"
-            ];
+        for($i = 1; $i <= count(self::$links); $i++) {
 
             /** @var Navigation $navItem */
-            $navItem = $this->getReference('nav_item_1');
+            $navItem = $this->getReference('nav_item_' . $i);
 
-            $page = new Page();
-            $page->setTitle($link);
-            $page->setPreview("<h1>Test $link</h1>");
-            $page->setPreviewImage(Image::imageUrl(640, 480, "cats"));
-            $page->setPanels(json_encode($panels));
-            $page->setNavigation($navItem);
+            foreach (self::$links[$i] as $link) {
+                $panels = [
+                    "panel-1" => "<h1>Made Up</h1><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, culpa earum ipsa laboriosam libero maiores modi nemo obcaecati odio possimus!</p><button>CLICK</button>"
+                ];
 
-            $this->addReference(sprintf('%s_%d', 'page', self::$counter), $page);
-            self::$counter++;
+                $page = new Page();
+                $page->setTitle($link);
+                $page->setPreview("<h1>Test $link</h1>");
+                $page->setPreviewImage(Image::imageUrl(640, 480, "cats"));
+                $page->setPanels(json_encode($panels));
+                $page->setNavigation($navItem);
 
-            $manager->persist($page);
+                $this->addReference(sprintf('%s_%d', 'page', self::$counter), $page);
+                self::$counter++;
+
+                $manager->persist($page);
+            }
         }
         $manager->flush();
     }
