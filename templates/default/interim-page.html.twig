@@ -5,8 +5,8 @@
     <div style="height: 500px; background-color: gray"></div>
     {# @var link \App\Entity\Page #}
     {% for link in subLinks %}
-        <p>{{ link.title }}</p>
+        <a href="{{ app.request.uri ~ '/' ~ link.slug }}">{{ link.title }}</a>
     {% endfor %}
     <div style="height: 500px; background-color: gray"></div>
-    
+
 {% endblock %}
