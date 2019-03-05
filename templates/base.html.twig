@@ -35,7 +35,7 @@
 
                     {# @var link \App\Entity\Navigation #}
                     {% for link in links %}
-                        <li><a href="{{ link.slug }}">{{ link.title}}</a></li>
+                        <li><a class="{{ app.request.pathInfo == '/' ~ link.slug ? 'active' : '' }}" href="{{ link.slug }}">{{ link.title}}</a></li>
                     {% endfor %}
 
                     <li class="mobile-nav-item"><a href="#">Book</a></li>
@@ -45,6 +45,18 @@
                     <li class="mobile-nav-item"><a href="#">Contact</a></li>
                 </ul>
             </div>
+            {# @var sublink \App\Entity\Page #}
+            {% if subLinks is defined %}
+                <div class="dropdown-nav-container">
+                    <ul class="dropdown-nav">
+                        {% for sublink in subLinks %}
+                            <li><a class="sublink" href="{{ app.request.uri ~ '/' ~ sublink.slug }}">{{ sublink.title }}</a></li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            {% endif %}
+
+
             <button class="mobile-menu-btn">
                 <span class="menu-line"></span>
                 <span class="menu-line"></span>
