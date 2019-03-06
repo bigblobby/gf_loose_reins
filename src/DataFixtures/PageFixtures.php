@@ -86,8 +86,8 @@ class PageFixtures extends Fixture
 
                 $page = new Page();
                 $page->setTitle($link);
-                $page->setPreview("<h1>Test $link</h1>");
-                $page->setPreviewImage(Image::imageUrl(640, 480, "cats"));
+                $page->setPreview("<h2>Test $link</h2><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam atque distinctio necessitatibus numquam odit quidem, sequi? Consectetur deserunt eos ex facilis ipsa iure libero maiores, minima, molestias mollitia perspiciatis qui.</p>");
+                $page->setPreviewImage(Image::imageUrl(1900, 1200, "cats"));
                 $page->setPanels(json_encode($panels));
                 $page->setNavigation($navItem);
 

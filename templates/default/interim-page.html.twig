@@ -5,6 +5,20 @@
 {% block body %}
 
     {% include "partials/page-header.html.twig" with {"image": mainLink.image} %}
+
+    {#{% for page in subLinks%}#}
+        {#{% include "partials/image-text-split.html.twig" with {"content": page.preview, "image": page.previewImage} only %}#}
+    {#{% endfor %}#}
+
+    {#{% for page in subLinks%}#}
+        {#{% include "partials/image-text-overlay.html.twig" with {"content": page.preview, "image": page.previewImage} only %}#}
+    {#{% endfor %}#}
+
+    {% include "panels/curated-content.html.twig" with {"pages": subLinks} only %}
+
+
+    {#{% include "panels/curated-content.html.twig" with {"pages": subLinks} %}#}
+
     <div style="height: 500px; background-color: gray"></div>
     <div style="height: 500px; background-color: gray"></div>
 

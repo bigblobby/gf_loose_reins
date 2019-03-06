@@ -1,0 +1,7 @@
+{% for page in pages%}
+    {% if loop.index is odd %}
+        {% include "partials/image-text-split.html.twig" with {"content": page.preview, "image": page.previewImage} only %}
+    {% else %}
+        {% include "partials/image-text-overlay.html.twig" with {"content": page.preview, "image": page.previewImage} only %}
+    {% endif %}
+{% endfor %}
