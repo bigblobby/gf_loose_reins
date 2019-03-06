@@ -1,5 +1,7 @@
 {% extends "base.html.twig" %}
 
+{% block title %}{{ mainLink.title }} | Loose Reins{% endblock %}
+
 {% block body %}
 
     {% include "partials/page-header.html.twig" with {"image": mainLink.image} %}

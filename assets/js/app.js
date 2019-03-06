@@ -77,4 +77,41 @@ $(document).ready(function(){
     });
 })();
 
+// Change the header banner image on mobile (move it down)
+(function(){
+    let headerContainer = document.querySelector('.header-container');
+    let pageHeader = document.querySelector('.page-header');
+
+    window.addEventListener('load', changePadding);
+    window.addEventListener('resize', changePadding);
+
+    function changePadding(){
+        if(window.innerWidth < 992){
+            pageHeader.setAttribute('style', "padding-top:" + headerContainer.clientHeight + "px");
+        } else {
+            pageHeader.setAttribute('style', "padding-top: 0px");
+        }
+    }
+})();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
