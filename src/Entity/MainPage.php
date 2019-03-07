@@ -39,6 +39,11 @@ class MainPage
     private $image;
 
     /**
+     * @ORM\Column(type="json", nullable=true)
+     */
+    private $summary = [];
+
+    /**
      * @ORM\OneToMany(targetEntity="App\Entity\Page", mappedBy="navigation")
      */
     private $pages;
@@ -85,6 +90,18 @@ class MainPage
     public function setImage($image): void
     {
         $this->image = $image;
+    }
+
+    public function getSummary(): ?array
+    {
+        return $this->summary;
+    }
+
+    public function setSummary(?array $summary): self
+    {
+        $this->summary = $summary;
+
+        return $this;
     }
 
     /**

@@ -4,10 +4,17 @@
 
 {% block body %}
 
+    {#---------MAIN PAGE TITLE AND BANNER IMAGE----------#}
     {% include "partials/page-header.html.twig" with {"title": mainPage.title, "image": mainPage.image} %}
+
+    {#------------------MAIN PAGE SUMMARY------------------#}
+    {% if mainPage.summary.content %}
+        {% include "partials/image-text-split.html.twig" with {"content": mainPage.summary.content, "image": mainPage.summary.image} only %}
+    {% endif %}
+
+    {#-----------LOAD PREVIEW PANELS FROM SUB PAGES-----------#}
     {% include "panels/curated-content.html.twig" with {"pages": subPages} only %}
 
-    <div style="height: 500px; background-color: gray"></div>
     <div style="height: 500px; background-color: gray"></div>
 
 {% endblock %}
