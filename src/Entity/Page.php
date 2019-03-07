@@ -52,6 +52,16 @@ class Page
      */
     private $navigation;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $route;
+
+    /**
+     * @ORM\Column(type="json")
+     */
+    private $parameters = [];
+
     public function getId(): ?int
     {
         return $this->id;
@@ -125,6 +135,30 @@ class Page
     public function setNavigation(?MainPage $navigation): self
     {
         $this->navigation = $navigation;
+
+        return $this;
+    }
+
+    public function getRoute(): ?string
+    {
+        return $this->route;
+    }
+
+    public function setRoute(string $route): self
+    {
+        $this->route = $route;
+
+        return $this;
+    }
+
+    public function getParameters()
+    {
+        return $this->parameters;
+    }
+
+    public function setParameters($parameters)
+    {
+        $this->parameters = $parameters;
 
         return $this;
     }

@@ -21,13 +21,13 @@ class MainPageFixtures extends Fixture
     ];
 
     static $navImages = [
-        "cabins-banner.jpg",
-        "lodges-banner.jpg",
-        "loose-reins-country-banner.jpg",
-        "out-and-about-banner.jpg",
-        "pantry-banner.jpg",
-        "loose-talk-banner.jpg",
-        "review-banner.jpg"
+        "images/navigation_images/cabins-banner.jpg",
+        "images/navigation_images/lodges-banner.jpg",
+        "images/navigation_images/loose-reins-country-banner.jpg",
+        "images/navigation_images/out-and-about-banner.jpg",
+        "images/navigation_images/pantry-banner.jpg",
+        "images/navigation_images/loose-talk-banner.jpg",
+        "images/navigation_images/review-banner.jpg"
     ];
 
     public function load(ObjectManager $manager)

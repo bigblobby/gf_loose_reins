@@ -33,11 +33,18 @@
             <div class="bottom-nav-container">
                 <ul class="bottom-nav">
 
-                    {# @var link \App\Entity\Navigation #}
-                    {% for link in mainPages %}
-                        <li><a class="{{ app.request.pathInfo == '/' ~ link.slug ? 'active' : '' }}" href="{{ link.slug }}">{{ link.title}}</a></li>
-                    {% endfor %}
+                    {# @var link \App\Entity\MainPage #}
+                    {#{% for link in mainPages %}#}
+                        {#<li><a class="{{ app.request.pathInfo == '/' ~ link.slug ? 'active' : '' }}" href="{{ link.slug }}">{{ link.title}}</a></li>#}
+                    {#{% endfor %}#}
 
+                    <li><a class="{{ app.request.attributes.get('_route') == 'app_default_cabins' ? 'active' : '' }}" href="{{ path('app_default_cabins') }}">Cabins</a></li>
+                    <li><a class="{{ app.request.attributes.get('_route') == 'app_default_lodges' ? 'active' : '' }}" href="{{ path('app_default_lodges') }}">Lodges</a></li>
+                    <li><a class="{{ app.request.attributes.get('_route') == 'app_default_loose_reins_country' ? 'active' : '' }}" href="{{ path('app_default_loose_reins_country') }}">Loose Reins Country</a></li>
+                    <li><a class="{{ app.request.attributes.get('_route') == 'app_default_out_and_about' ? 'active' : '' }}" href="{{ path('app_default_out_and_about') }}">Out And About</a></li>
+                    <li><a class="{{ app.request.attributes.get('_route') == 'app_default_pantry' ? 'active' : '' }}" href="{{ path('app_default_pantry') }}">Pantry</a></li>
+                    <li><a class="{{ app.request.attributes.get('_route') == 'app_default_loose_talk' ? 'active' : '' }}" href="{{ path('app_default_loose_talk') }}">Loose Talk</a></li>
+                    <li><a class="{{ app.request.attributes.get('_route') == 'app_default_reviews' ? 'active' : '' }}" href="{{ path('app_default_reviews') }}">Reviews</a></li>
                     <li class="mobile-nav-item"><a href="#">Book</a></li>
                     <li class="mobile-nav-item"><a href="#">Before you book</a></li>
                     <li class="mobile-nav-item"><a href="#">Offers</a></li>
@@ -51,7 +58,8 @@
                     <ul class="dropdown-nav">
                         {% for sublink in subLinks %}
                             {% if sublink.title is not empty %}
-                                <li><a class="sublink" href="{{ app.request.uri ~ '/' ~ sublink.slug }}">{{ sublink.title }}</a></li>
+                                {#<li><a class="sublink" href="{{ app.request.uri ~ '/' ~ sublink.slug }}">{{ sublink.title }}</a></li>#}
+                                <li><a class="sublink" href="{{ path('' ~ sublink.route, {"slug": sublink.slug}) }}">{{ sublink.title }}</a></li>
                             {% endif %}
                         {% endfor %}
                     </ul>
