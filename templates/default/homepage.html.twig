@@ -12,10 +12,20 @@
         </div>
     </div>
 
-    {% include "partials/image-text-split.html.twig" %}
-    {% include "partials/image-text-overlay.html.twig" %}
+    {% for panel in homepage.panels %}
+        {% if loop.index is odd %}
+            {% include "partials/image-text-split.html.twig" with { "content": panel.content, "image": panel.image } only %}
+        {% else %}
+            {% include "partials/image-text-overlay.html.twig" with { "content": panel.content, "image": panel.image } only %}
+        {% endif %}
+    {% endfor %}
+
     {% include "partials/blog-article-preview.html.twig" %}
     {% include "partials/four-ctas.html.twig" %}
+
+    {#{% include "partials/image-text-split.html.twig" %}#}
+    {#{% include "partials/image-text-overlay.html.twig" %}#}
+
 
 {% endblock %}
 

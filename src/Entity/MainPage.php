@@ -9,9 +9,9 @@ use Gedmo\Mapping\Annotation as Gedmo;
 use Gedmo\Timestampable\Traits\TimestampableEntity;
 
 /**
- * @ORM\Entity(repositoryClass="App\Repository\NavigationRepository")
+ * @ORM\Entity(repositoryClass="App\Repository\MainPageRepository")
  */
-class Navigation
+class MainPage
 {
     use TimestampableEntity;
 

@@ -2,11 +2,11 @@
 
 namespace App\DataFixtures;
 
-use App\Entity\Navigation;
+use App\Entity\MainPage;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\Persistence\ObjectManager;
 
-class NavigationFixtures extends Fixture
+class MainPageFixtures extends Fixture
 {
     static $counter = 1;
 
@@ -34,7 +34,7 @@ class NavigationFixtures extends Fixture
     {
         for($i = 0; $i < count(self::$navTitles); $i++){
 
-            $navItem = new Navigation();
+            $navItem = new MainPage();
             $navItem->setTitle(self::$navTitles[$i]);
             $navItem->setImage(self::$navImages[$i]);
 

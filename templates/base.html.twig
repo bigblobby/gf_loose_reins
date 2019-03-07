@@ -34,7 +34,7 @@
                 <ul class="bottom-nav">
 
                     {# @var link \App\Entity\Navigation #}
-                    {% for link in mainNavLinks %}
+                    {% for link in mainPages %}
                         <li><a class="{{ app.request.pathInfo == '/' ~ link.slug ? 'active' : '' }}" href="{{ link.slug }}">{{ link.title}}</a></li>
                     {% endfor %}
 

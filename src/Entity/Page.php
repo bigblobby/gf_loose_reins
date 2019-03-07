@@ -47,7 +47,7 @@ class Page
     private $panels = [];
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Navigation", inversedBy="pages")
+     * @ORM\ManyToOne(targetEntity="MainPage", inversedBy="pages")
      * @ORM\JoinColumn(nullable=false)
      */
     private $navigation;
@@ -117,12 +117,12 @@ class Page
         return $this;
     }
 
-    public function getNavigation(): ?Navigation
+    public function getNavigation(): ?MainPage
     {
         return $this->navigation;
     }
 
-    public function setNavigation(?Navigation $navigation): self
+    public function setNavigation(?MainPage $navigation): self
     {
         $this->navigation = $navigation;
 

@@ -2,7 +2,7 @@
 
 namespace App\DataFixtures;
 
-use App\Entity\Navigation;
+use App\Entity\MainPage;
 use App\Entity\Page;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\Persistence\ObjectManager;
@@ -76,7 +76,7 @@ class PageFixtures extends Fixture
     {
         for($i = 1; $i <= count(self::$links); $i++) {
 
-            /** @var Navigation $navItem */
+            /** @var MainPage $navItem */
             $navItem = $this->getReference('nav_item_' . $i);
 
             foreach (self::$links[$i] as $link) {
@@ -102,6 +102,6 @@ class PageFixtures extends Fixture
 
     public function getDependencies()
     {
-        return [Navigation::class];
+        return [MainPage::class];
     }
 }
