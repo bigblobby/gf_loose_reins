@@ -115,12 +115,12 @@ class Page
         return $this;
     }
 
-    public function getPanels()
+    public function getPanels(): ?array
     {
         return $this->panels;
     }
 
-    public function setPanels($panels): self
+    public function setPanels(array $panels): self
     {
         $this->panels = $panels;
 

@@ -26,8 +26,6 @@ class DefaultController extends AbstractController
         ]);
     }
 
-
-
     /**
      * @Route("/cabins/{slug}", name="app_default_cabins", defaults={"slug": ""})
      */
@@ -38,21 +36,21 @@ class DefaultController extends AbstractController
 
         // Get the one main link, then find all of its sub links
         $mainPage = $em->getRepository(MainPage::class)->findOneBy(['slug' => 'cabins']);
-        $subLinks = $mainPage->getPages();
+        $subPages = $mainPage->getPages();
 
         // If sub link is clicked
         if($slug){
             $subPage = $em->getRepository(Page::class)->findOneBy(['slug' => $slug]);
             return $this->render('default/page.html.twig', [
                 'mainPages' => $mainPages,
-                'subLinks' => $subLinks,
+                'subPages' => $subPages,
                 'subPage' => $subPage
             ]);
         }
 
         return $this->render('default/main-page.html.twig', [
             'mainPages' => $mainPages,
-            'subLinks' => $subLinks,
+            'subPages' => $subPages,
             'mainPage' => $mainPage
         ]);
     }
@@ -68,21 +66,21 @@ class DefaultController extends AbstractController
 
         // Get the one main link, then find all of its sub links
         $mainPage = $em->getRepository(MainPage::class)->findOneBy(['slug' => 'lodges']);
-        $subLinks = $mainPage->getPages();
+        $subPages = $mainPage->getPages();
 
         // If sub link is clicked
         if($slug){
             $subPage = $em->getRepository(Page::class)->findOneBy(['slug' => $slug]);
             return $this->render('default/page.html.twig', [
                 'mainPages' => $mainPages,
-                'subLinks' => $subLinks,
+                'subPages' => $subPages,
                 'subPage' => $subPage
             ]);
         }
 
         return $this->render('default/main-page.html.twig', [
             'mainPages' => $mainPages,
-            'subLinks' => $subLinks,
+            'subPages' => $subPages,
             'mainPage' => $mainPage
         ]);
     }
@@ -97,21 +95,21 @@ class DefaultController extends AbstractController
 
         // Get the one main link, then find all of its sub links
         $mainPage = $em->getRepository(MainPage::class)->findOneBy(['slug' => 'loose-reins-country']);
-        $subLinks = $mainPage->getPages();
+        $subPages = $mainPage->getPages();
 
         // If sub link is clicked
         if($slug){
             $subPage = $em->getRepository(Page::class)->findOneBy(['slug' => $slug]);
             return $this->render('default/page.html.twig', [
                 'mainPages' => $mainPages,
-                'subLinks' => $subLinks,
+                'subPages' => $subPages,
                 'subPage' => $subPage
             ]);
         }
 
         return $this->render('default/main-page.html.twig', [
             'mainPages' => $mainPages,
-            'subLinks' => $subLinks,
+            'subPages' => $subPages,
             'mainPage' => $mainPage
         ]);
     }
@@ -126,21 +124,21 @@ class DefaultController extends AbstractController
 
         // Get the one main link, then find all of its sub links
         $mainPage = $em->getRepository(MainPage::class)->findOneBy(['slug' => 'out-and-about']);
-        $subLinks = $mainPage->getPages();
+        $subPages = $mainPage->getPages();
 
         // If sub link is clicked
         if($slug){
             $subPage = $em->getRepository(Page::class)->findOneBy(['slug' => $slug]);
             return $this->render('default/page.html.twig', [
                 'mainPages' => $mainPages,
-                'subLinks' => $subLinks,
+                'subPages' => $subPages,
                 'subPage' => $subPage
             ]);
         }
 
         return $this->render('default/main-page.html.twig', [
             'mainPages' => $mainPages,
-            'subLinks' => $subLinks,
+            'subPages' => $subPages,
             'mainPage' => $mainPage
         ]);
     }
@@ -155,21 +153,21 @@ class DefaultController extends AbstractController
 
         // Get the one main link, then find all of its sub links
         $mainPage = $em->getRepository(MainPage::class)->findOneBy(['slug' => 'pantry']);
-        $subLinks = $mainPage->getPages();
+        $subPages = $mainPage->getPages();
 
         // If sub link is clicked
         if($slug){
             $subPage = $em->getRepository(Page::class)->findOneBy(['slug' => $slug]);
             return $this->render('default/page.html.twig', [
                 'mainPages' => $mainPages,
-                'subLinks' => $subLinks,
+                'subPages' => $subPages,
                 'subPage' => $subPage
             ]);
         }
 
         return $this->render('default/main-page.html.twig', [
             'mainPages' => $mainPages,
-            'subLinks' => $subLinks,
+            'subPages' => $subPages,
             'mainPage' => $mainPage
         ]);
     }
@@ -184,21 +182,21 @@ class DefaultController extends AbstractController
 
         // Get the one main link, then find all of its sub links
         $mainPage = $em->getRepository(MainPage::class)->findOneBy(['slug' => 'loose-talk']);
-        $subLinks = $mainPage->getPages();
+        $subPages = $mainPage->getPages();
 
         // If sub link is clicked
         if($slug){
             $subPage = $em->getRepository(Page::class)->findOneBy(['slug' => $slug]);
             return $this->render('default/page.html.twig', [
                 'mainPages' => $mainPages,
-                'subLinks' => $subLinks,
+                'subPages' => $subPages,
                 'subPage' => $subPage
             ]);
         }
 
         return $this->render('default/main-page.html.twig', [
             'mainPages' => $mainPages,
-            'subLinks' => $subLinks,
+            'subPages' => $subPages,
             'mainPage' => $mainPage
         ]);
     }
@@ -213,41 +211,22 @@ class DefaultController extends AbstractController
 
         // Get the one main link, then find all of its sub links
         $mainPage = $em->getRepository(MainPage::class)->findOneBy(['slug' => 'reviews']);
-        $subLinks = $mainPage->getPages();
+        $subPages = $mainPage->getPages();
 
         // If sub link is clicked
         if($slug){
             $subPage = $em->getRepository(Page::class)->findOneBy(['slug' => $slug]);
             return $this->render('default/page.html.twig', [
                 'mainPages' => $mainPages,
-                'subLinks' => $subLinks,
+                'subPages' => $subPages,
                 'subPage' => $subPage
             ]);
         }
 
         return $this->render('default/main-page.html.twig', [
             'mainPages' => $mainPages,
-            'subLinks' => $subLinks,
+            'subPages' => $subPages,
             'mainPage' => $mainPage
         ]);
     }
-
-//    /**
-//     * @Route("/{slug}", name="app_default_interim_page")
-//     */
-//    public function interimPageAction(EntityManagerInterface $em, $slug)
-//    {
-//        // Links for main navigation
-//        $mainPages = $em->getRepository(MainPage::class)->findAll();
-//
-//        // Get the one main link, then find all of its sub links
-//        $mainLink = $em->getRepository(MainPage::class)->findOneBy(['slug' => $slug]);
-//        $subLinks = $mainLink->getPages();
-//
-//        return $this->render('default/main-page.html.twig', [
-//            'mainPages' => $mainPages,
-//            'subLinks' => $subLinks,
-//            'mainLink' => $mainLink
-//        ]);
-//    }
 }

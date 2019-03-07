@@ -32,12 +32,6 @@
             </div>
             <div class="bottom-nav-container">
                 <ul class="bottom-nav">
-
-                    {# @var link \App\Entity\MainPage #}
-                    {#{% for link in mainPages %}#}
-                        {#<li><a class="{{ app.request.pathInfo == '/' ~ link.slug ? 'active' : '' }}" href="{{ link.slug }}">{{ link.title}}</a></li>#}
-                    {#{% endfor %}#}
-
                     <li><a class="{{ app.request.attributes.get('_route') == 'app_default_cabins' ? 'active' : '' }}" href="{{ path('app_default_cabins') }}">Cabins</a></li>
                     <li><a class="{{ app.request.attributes.get('_route') == 'app_default_lodges' ? 'active' : '' }}" href="{{ path('app_default_lodges') }}">Lodges</a></li>
                     <li><a class="{{ app.request.attributes.get('_route') == 'app_default_loose_reins_country' ? 'active' : '' }}" href="{{ path('app_default_loose_reins_country') }}">Loose Reins Country</a></li>
@@ -53,13 +47,12 @@
                 </ul>
             </div>
             {# @var sublink \App\Entity\Page #}
-            {% if subLinks is defined %}
+            {% if subPages is defined %}
                 <div class="dropdown-nav-container">
                     <ul class="dropdown-nav">
-                        {% for sublink in subLinks %}
-                            {% if sublink.title is not empty %}
-                                {#<li><a class="sublink" href="{{ app.request.uri ~ '/' ~ sublink.slug }}">{{ sublink.title }}</a></li>#}
-                                <li><a class="sublink" href="{{ path('' ~ sublink.route, {"slug": sublink.slug}) }}">{{ sublink.title }}</a></li>
+                        {% for subPage in subPages %}
+                            {% if subPage.title is not empty %}
+                                <li><a class="sublink" href="{{ path(subPage.route, {"slug": subPage.slug}) }}">{{ subPage.title }}</a></li>
                             {% endif %}
                         {% endfor %}
                     </ul>

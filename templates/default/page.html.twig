@@ -4,22 +4,12 @@
 
 {% block body %}
 
+    {#--------------SUB PAGE TITLE--------------#}
     {% include "partials/page-header.html.twig" with {"title": subPage.title,"image": subPage.previewImage} %}
 
-    {#{% for page in subLinks%}#}
-    {#{% include "partials/image-text-split.html.twig" with {"content": page.preview, "image": page.previewImage} only %}#}
-    {#{% endfor %}#}
+    {#--------------SUB PAGE PANELS-------------#}
+    {% include "panels/curated-content.html.twig" with {"panels": subPage.panels} only %}
 
-    {#{% for page in subLinks%}#}
-    {#{% include "partials/image-text-overlay.html.twig" with {"content": page.preview, "image": page.previewImage} only %}#}
-    {#{% endfor %}#}
-
-    {#{% include "panels/curated-content.html.twig" with {"pages": subLinks} only %}#}
-
-
-    {#{% include "panels/curated-content.html.twig" with {"pages": subLinks} %}#}
-
-    <div style="height: 500px; background-color: gray"></div>
     <div style="height: 500px; background-color: gray"></div>
 
 {% endblock %}

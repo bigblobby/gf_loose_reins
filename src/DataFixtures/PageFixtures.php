@@ -180,15 +180,20 @@ class PageFixtures extends Fixture
             $navItem = $this->getReference('nav_item_' . $i);
 
             for($j = 0; $j < count(self::$links[$i]); $j++){
+                $catImage = Image::imageUrl(1900, 1200, "cats");
+
                 $panels = [
-                    "panel-1" => "<h1>Made Up</h1><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, culpa earum ipsa laboriosam libero maiores modi nemo obcaecati odio possimus!</p><button>CLICK</button>"
+                    [
+                        "content" => "<h1>Made Up</h1><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, culpa earum ipsa laboriosam libero maiores modi nemo obcaecati odio possimus!</p><button>CLICK</button>",
+                        "image" => "$catImage"
+                    ]
                 ];
 
                 $page = new Page();
                 $page->setTitle(self::$links[$i][$j]);
                 $page->setPreview("<h2>Test " . self::$links[$i][$j]. "</h2><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam atque distinctio necessitatibus numquam odit quidem, sequi? Consectetur deserunt eos ex facilis ipsa iure libero maiores, minima, molestias mollitia perspiciatis qui.</p>");
-                $page->setPreviewImage(Image::imageUrl(1900, 1200, "cats"));
-                $page->setPanels(json_encode($panels));
+                $page->setPreviewImage($catImage);
+                $page->setPanels(($panels));
                 $page->setNavigation($navItem);
                 $page->setRoute(self::$routes[$i][$j]);
                 $page->setParameters(json_encode(self::$parameters[$i][$j]));
