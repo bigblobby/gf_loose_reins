@@ -246,6 +246,10 @@
                 padding: 0.5rem;
                 margin: 0 0.5rem;
 
+                &.active {
+                    background-color: darken(#a1c349, 20);
+                }
+
                 @include media-breakpoint-down(lg){
                     font-size: 0.9rem;
                 }

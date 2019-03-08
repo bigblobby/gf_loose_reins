@@ -52,7 +52,7 @@
                     <ul class="dropdown-nav">
                         {% for subPage in subPages %}
                             {% if subPage.title is not empty %}
-                                <li><a class="sublink" href="{{ path(subPage.route, {"slug": subPage.slug}) }}">{{ subPage.title }}</a></li>
+                                <li><a class="sublink {{ subPage.slug in app.request.pathInfo ? 'active' }}" href="{{ path(subPage.route, {"slug": subPage.slug}) }}">{{ subPage.title }}</a></li>
                             {% endif %}
                         {% endfor %}
                     </ul>
