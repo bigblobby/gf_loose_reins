@@ -14,6 +14,7 @@
     <body>
 
         {#-------------MAIN NAVIGATION-------------#}
+        {{ dump(app.request.attributes) }}
 
         <nav class="header-container">
             <div class="top-nav-container">
@@ -32,13 +33,20 @@
             </div>
             <div class="bottom-nav-container">
                 <ul class="bottom-nav">
-                    <li><a class="{{ app.request.attributes.get('_route') == 'app_default_cabins' ? 'active' : '' }}" href="{{ path('app_default_cabins') }}">Cabins</a></li>
-                    <li><a class="{{ app.request.attributes.get('_route') == 'app_default_lodges' ? 'active' : '' }}" href="{{ path('app_default_lodges') }}">Lodges</a></li>
-                    <li><a class="{{ app.request.attributes.get('_route') == 'app_default_loose_reins_country' ? 'active' : '' }}" href="{{ path('app_default_loose_reins_country') }}">Loose Reins Country</a></li>
-                    <li><a class="{{ app.request.attributes.get('_route') == 'app_default_out_and_about' ? 'active' : '' }}" href="{{ path('app_default_out_and_about') }}">Out And About</a></li>
-                    <li><a class="{{ app.request.attributes.get('_route') == 'app_default_pantry' ? 'active' : '' }}" href="{{ path('app_default_pantry') }}">Pantry</a></li>
-                    <li><a class="{{ app.request.attributes.get('_route') == 'app_default_loose_talk' ? 'active' : '' }}" href="{{ path('app_default_loose_talk') }}">Loose Talk</a></li>
-                    <li><a class="{{ app.request.attributes.get('_route') == 'app_default_reviews' ? 'active' : '' }}" href="{{ path('app_default_reviews') }}">Reviews</a></li>
+                    {#<li><a class="{{ app.request.attributes.get('_route') == 'app_default_cabins' ? 'active' }}" href="{{ path('app_default_cabins') }}">Cabins</a></li>#}
+                    {#<li><a class="{{ app.request.attributes.get('_route') == 'app_default_lodges' ? 'active' }}" href="{{ path('app_default_lodges') }}">Lodges</a></li>#}
+                    {#<li><a class="{{ app.request.attributes.get('_route') == 'app_default_loose_reins_country' ? 'active' }}" href="{{ path('app_default_loose_reins_country') }}">Loose Reins Country</a></li>#}
+                    {#<li><a class="{{ app.request.attributes.get('_route') == 'app_default_out_and_about' ? 'active' }}" href="{{ path('app_default_out_and_about') }}">Out And About</a></li>#}
+                    {#<li><a class="{{ app.request.attributes.get('_route') == 'app_default_pantry' ? 'active' }}" href="{{ path('app_default_pantry') }}">Pantry</a></li>#}
+                    {#<li><a class="{{ app.request.attributes.get('_route') == 'app_default_loose_talk' ? 'active' }}" href="{{ path('app_default_loose_talk') }}">Loose Talk</a></li>#}
+                    {#<li><a class="{{ app.request.attributes.get('_route') == 'app_default_reviews' ? 'active' }}" href="{{ path('app_default_reviews') }}">Reviews</a></li>#}
+
+                    {# @var link \App\Entity\MainPage #}
+                    {% for link in mainPages %}
+                        <li><a class="{{ link.slug == app.request.attributes.get('mainSlug') ? 'active' }}" href="{{ path('app_default_page', {'mainSlug': link.slug}) }}">{{ link.title}}</a></li>
+                        {{ dump(link.slug) }}
+                    {% endfor %}
+
                     <li class="mobile-nav-item"><a href="#">Book</a></li>
                     <li class="mobile-nav-item"><a href="#">Before you book</a></li>
                     <li class="mobile-nav-item"><a href="#">Offers</a></li>
@@ -52,7 +60,7 @@
                     <ul class="dropdown-nav">
                         {% for subPage in subPages %}
                             {% if subPage.title is not empty %}
-                                <li><a class="sublink {{ subPage.slug in app.request.pathInfo ? 'active' }}" href="{{ path(subPage.route, {"slug": subPage.slug}) }}">{{ subPage.title }}</a></li>
+                                <li><a class="sublink {{ subPage.slug == app.request.attributes.get('slug') ? 'active' }}" href="{{ path('app_default_page', {'mainSlug': subPage.navigation.slug, 'slug': subPage.slug }) }}">{{ subPage.title }}</a></li>
                             {% endif %}
                         {% endfor %}
                     </ul>
