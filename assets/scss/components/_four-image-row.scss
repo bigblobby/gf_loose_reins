@@ -1,0 +1,21 @@
+.four-image-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+
+    .image-wrapper {
+        flex-basis: 25%;
+
+        @include media-breakpoint-down(md){
+            flex-basis: 50%;
+        }
+
+        @include media-breakpoint-down(sm){
+            flex-basis: 100%;
+        }
+
+        img {
+            width: 100%;
+        }
+    }
+}

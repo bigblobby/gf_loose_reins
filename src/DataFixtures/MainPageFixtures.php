@@ -49,7 +49,7 @@ class MainPageFixtures extends Fixture
         ],
         [
             "content" => "<h2>What’s the pioneer trail life without good tucker? </h2><p>Eat well at Loose Reins. Grab some delicious ingredients from the shop at the Barn or one of our home made specialities, ready to warm up on the stove.</p><p>Dive into a breakfast or barbecue hamper for locally produced meat and our very own free range eggs. Pour a glass or two of wine from our cellar or sample the local brew.</p><p>Enjoy delicious local food. It all tastes that little bit better, whether you’re al fresco on the porch with a barbecue or snug inside with a warming winter stew.</p>",
-            "image" => "images/main_page_images/pantry.jpg"
+            "image" => "images/main_page_images/pantry-summary.jpg"
         ],
         [
             "content" => "",
