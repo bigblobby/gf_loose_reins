@@ -50,17 +50,7 @@ class Page
      * @ORM\ManyToOne(targetEntity="MainPage", inversedBy="pages")
      * @ORM\JoinColumn(nullable=false)
      */
-    private $navigation;
-
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $route;
-
-    /**
-     * @ORM\Column(type="json")
-     */
-    private $parameters = [];
+    private $mainPage;
 
     public function getId(): ?int
     {
@@ -127,39 +117,16 @@ class Page
         return $this;
     }
 
-    public function getNavigation(): ?MainPage
+    public function getMainPage(): ?MainPage
     {
-        return $this->navigation;
+        return $this->mainPage;
     }
 
-    public function setNavigation(?MainPage $navigation): self
+    public function setMainPage(?MainPage $mainPage): self
     {
-        $this->navigation = $navigation;
+        $this->mainPage = $mainPage;
 
         return $this;
     }
 
-    public function getRoute(): ?string
-    {
-        return $this->route;
-    }
-
-    public function setRoute(string $route): self
-    {
-        $this->route = $route;
-
-        return $this;
-    }
-
-    public function getParameters()
-    {
-        return $this->parameters;
-    }
-
-    public function setParameters($parameters)
-    {
-        $this->parameters = $parameters;
-
-        return $this;
-    }
 }

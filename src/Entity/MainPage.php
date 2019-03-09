@@ -44,7 +44,7 @@ class MainPage
     private $summary = [];
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Page", mappedBy="navigation")
+     * @ORM\OneToMany(targetEntity="App\Entity\Page", mappedBy="mainPage")
      */
     private $pages;
 

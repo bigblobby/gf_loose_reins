@@ -8,7 +8,7 @@ use Doctrine\Common\Persistence\ObjectManager;
 
 class MainPageFixtures extends Fixture
 {
-    static $counter = 1;
+    //static $counter = 1;
 
     static $navTitles = [
         "Cabins",
@@ -71,8 +71,8 @@ class MainPageFixtures extends Fixture
             $navItem->setSummary(self::$summaries[$i]);
 
             // Add a reference nav_item#COUNTER#
-            $this->addReference(sprintf('%s_%d', 'nav_item', self::$counter), $navItem);
-            self::$counter++;
+            $this->addReference(sprintf('%s_%d', 'main_page', $i), $navItem);
+            //self::$counter++;
 
             $manager->persist($navItem);
         }
