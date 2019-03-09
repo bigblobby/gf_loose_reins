@@ -1,0 +1,50 @@
+.contact-us-container {
+    display: flex;
+    height: 1000px;
+
+    .contact-us-intro-container,
+    .contact-us-image-container {
+        flex-basis: 50%;
+    }
+
+    .contact-us-intro-container {
+        padding: 3rem;
+
+        address {
+            font-size: 1.25rem;
+            font-weight: 300;
+        }
+
+        a {
+            display: inline-block;
+            font-family: 'Lora', serif;
+            font-size: 1.25rem;
+            font-style: italic;
+            text-decoration: none;
+            background-color: #475356;
+            color: #fff;
+            padding: 0.75rem 3rem;
+            margin-bottom: 1rem;
+            margin-right: 1rem;
+            border: 1px solid transparent;
+            transition: all 0.2s ease-out;
+
+            &:hover {
+                background-color: #de6d4d;
+            }
+        }
+    }
+
+    .contact-us-image-container {
+        position: relative;
+        overflow: hidden;
+
+        img {
+            position: absolute;
+            display: block;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+}

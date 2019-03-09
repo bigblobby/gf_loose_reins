@@ -153,6 +153,21 @@ class PageFixtures extends Fixture
             }
 
         }
+
+        $contactIntro = [
+                "intro" => "We'd love to hear from you! Please get in touch if you'd like to visit or have any questions about Loose Reins.",
+                "address" => "Ridgeway Farm,<br>Shillingstone,<br>Dorset,<br>DT11 0TF",
+                "contactNumber" => "01258 863533",
+                "findUs" => "How To Find Us",
+                "directions" => "Download Directions"
+        ];
+
+        $contactPage = new Page();
+        $contactPage->setTitle("Contact Us");
+        $contactPage->setPreviewImage("images/contact_form/image-1.jpg");
+        $contactPage->setPanels($contactIntro);
+        $manager->persist($contactPage);
+
         $manager->flush();
     }
 

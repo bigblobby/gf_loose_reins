@@ -26,13 +26,13 @@ class Page
     private $title;
 
     /**
-     * @ORM\Column(type="string", length=100)
+     * @ORM\Column(type="string", length=100, nullable=true)
      * @Gedmo\Slug(fields={"title"})
      */
     private $slug;
 
     /**
-     * @ORM\Column(type="text")
+     * @ORM\Column(type="text", nullable=true)
      */
     private $preview;
 
@@ -48,7 +48,7 @@ class Page
 
     /**
      * @ORM\ManyToOne(targetEntity="MainPage", inversedBy="pages")
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\JoinColumn(nullable=true)
      */
     private $mainPage;
 

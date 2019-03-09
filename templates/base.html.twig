@@ -22,7 +22,7 @@
                     <li><a href="#">Before you book</a></li>
                     <li><a href="#">Offers</a></li>
                     <li><a href="#">Gallery</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="{{ path('app_enquiry_contact') }}">Contact</a></li>
                 </ul>
             </div>
             <div class="logo-container">
@@ -34,7 +34,7 @@
                 <ul class="bottom-nav">
 
                     {# @var link \App\Entity\MainPage #}
-                    {% for link in mainPages %}
+                    {% for link in main_navigation() %}
                         <li><a class="{{ link.slug == app.request.attributes.get('mainSlug') ? 'active' }}" href="{{ path('app_default_page', {'mainSlug': link.slug}) }}">{{ link.title}}</a></li>
                     {% endfor %}
 
@@ -42,7 +42,7 @@
                     <li class="mobile-nav-item"><a href="#">Before you book</a></li>
                     <li class="mobile-nav-item"><a href="#">Offers</a></li>
                     <li class="mobile-nav-item"><a href="#">Gallery</a></li>
-                    <li class="mobile-nav-item"><a href="#">Contact</a></li>
+                    <li class="mobile-nav-item"><a href="{{ path('app_enquiry_contact') }}">Contact</a></li>
                 </ul>
             </div>
 

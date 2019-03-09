@@ -2,12 +2,21 @@
 
 namespace App\Twig;
 
+use App\Entity\MainPage;
+use Doctrine\ORM\EntityManagerInterface;
 use Twig\Extension\AbstractExtension;
 use Twig\TwigFilter;
 use Twig\TwigFunction;
 
 class AppExtension extends AbstractExtension
 {
+    private $em;
+
+    public function __construct(EntityManagerInterface $em)
+    {
+        $this->em = $em;
+    }
+
     public function getFilters(): array
     {
         return [
@@ -18,15 +27,20 @@ class AppExtension extends AbstractExtension
         ];
     }
 
-//    public function getFunctions(): array
-//    {
-//        return [
-//            new TwigFunction('function_name', [$this, 'doSomething']),
-//        ];
-//    }
+    public function getFunctions(): array
+    {
+        return [
+            new TwigFunction('main_navigation', [$this, 'loadMainNavigation']),
+        ];
+    }
 
     public function decodeJSON($value)
     {
         return json_decode($value);
+    }
+
+    public function loadMainNavigation()
+    {
+        return $this->em->getRepository(MainPage::class)->findAll();
     }
 }
