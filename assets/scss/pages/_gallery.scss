@@ -1,16 +1,23 @@
 .gallery-container {
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
-    padding: 1rem;
+    padding: 1rem 0;
 
     .image-container {
         padding: 1rem;
-        flex-basis: 25%;
+
         img {
             display: block;
             width: 100%;
-            min-height: 341px;
+            min-height: 500px;
+            min-width: 500px;
             background: gray;
+
+            @include media-breakpoint-down(xs){
+                min-width: auto;
+                min-height: auto;
+            }
 
             &.lazy {
                 //filter: blur(5px);
