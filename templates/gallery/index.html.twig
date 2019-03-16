@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Gallery | Loose Reins{% endblock %}
+
+{% block body %}
+
+    <div style="background-color: gray; height: 500px"></div>
+
+    <div class="gallery-container">
+        {% for image in images %}
+            <div class="image-container">
+                {# TODO the src attribute needs to be a smaller image size, otherwise lazy loading is pointless#}
+                <img class="lazy" data-src="{{ image.path }}" alt="{{ image.title }}">
+            </div>
+        {% endfor %}
+    </div>
+
+    <div style="background-color: gray; height: 500px"></div>
+
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ asset('build/lazyload.js') }}"></script>
+{% endblock %}

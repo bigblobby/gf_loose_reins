@@ -86,10 +86,12 @@ $(document).ready(function(){
     window.addEventListener('resize', changePadding);
 
     function changePadding(){
-        if(window.innerWidth < 992){
-            pageHeader.setAttribute('style', "padding-top:" + headerContainer.clientHeight + "px");
-        } else {
-            pageHeader.setAttribute('style', "padding-top: 0px");
+        if(location.pathname !== '/') {
+            if (window.innerWidth < 992) {
+                pageHeader.setAttribute('style', "padding-top:" + headerContainer.clientHeight + "px");
+            } else {
+                pageHeader.setAttribute('style', "padding-top: 0px");
+            }
         }
     }
 })();

@@ -116,7 +116,7 @@ class MainPage
     {
         if (!$this->pages->contains($page)) {
             $this->pages[] = $page;
-            $page->setNavigation($this);
+            $page->setMainPage($this);
         }
 
         return $this;
@@ -127,8 +127,8 @@ class MainPage
         if ($this->pages->contains($page)) {
             $this->pages->removeElement($page);
             // set the owning side to null (unless already changed)
-            if ($page->getNavigation() === $this) {
-                $page->setNavigation(null);
+            if ($page->getMainPage() === $this) {
+                $page->setMainPage(null);
             }
         }
 
