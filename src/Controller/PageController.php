@@ -22,13 +22,13 @@ class PageController extends AbstractController
         // If sub link is clicked
         if($slug){
             $subPage = $em->getRepository(Page::class)->findOneBy(['slug' => $slug]);
-            return $this->render('default/page.html.twig', [
+            return $this->render('page/sub-page.html.twig', [
                 'subPages' => $subPages,
                 'subPage' => $subPage
             ]);
         }
 
-        return $this->render('default/main-page.html.twig', [
+        return $this->render('page/main-page.html.twig', [
             'subPages' => $subPages,
             'mainPage' => $mainPage
         ]);

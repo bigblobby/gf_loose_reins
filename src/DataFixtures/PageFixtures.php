@@ -10,6 +10,7 @@ use Faker\Factory;
 use Faker\Generator;
 use Faker\Provider\Image;
 
+// TODO clean this page
 class PageFixtures extends Fixture
 {
     static $counter = 1;
@@ -63,56 +64,6 @@ class PageFixtures extends Fixture
             "Award"
         ]
     ];
-
-//    static $routes = [
-//        [
-//            "app_default_cabins",
-//            "app_default_cabins",
-//            "app_default_cabins",
-//            "app_default_cabins",
-//            "app_default_cabins",
-//            "app_default_cabins",
-//            "app_default_cabins",
-//            "app_default_cabins"
-//        ],
-//        [
-//            "app_default_lodges",
-//            "app_default_lodges",
-//            "app_default_lodges",
-//            "app_default_lodges",
-//            "app_default_lodges",
-//            "app_default_lodges",
-//            "app_default_lodges",
-//            "app_default_lodges",
-//            "app_default_lodges"
-//        ],
-//        [
-//            "app_default_loose_reins_country",
-//            "app_default_loose_reins_country",
-//            "app_default_loose_reins_country"
-//        ],
-//        [
-//            "app_default_out_and_about",
-//            "app_default_out_and_about",
-//            "app_default_out_and_about",
-//            "app_default_out_and_about",
-//            "app_default_out_and_about",
-//        ],
-//        [
-//            "app_default_pantry",
-//            "app_default_pantry",
-//            "app_default_pantry",
-//            "app_default_pantry"
-//        ],
-//        [
-//            ""
-//        ],
-//        [
-//            "app_default_reviews",
-//            "app_default_reviews",
-//            "app_default_reviews"
-//        ]
-//    ];
 
     /** @var Generator */
     private $faker;

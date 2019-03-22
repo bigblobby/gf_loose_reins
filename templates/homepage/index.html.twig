@@ -1,20 +1,26 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello HomepageController!{% endblock %}
+{% block title %}Welcome to Loose Reins | Loose Reins{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+    <div class="homepage-header">
+        <div class="homepage-image-container"></div>
+        <div class="homepage-banner">
+            <h1>LUXURY GLAMPING WITH A FRONTIER CHARM.</h1>
+            <p>When the trail is stretching out in front of you, the sky is blue above you and the daily grind is well and truly to the rear, that’s one amazing feeling. Loose Reins is all about finding and enjoying that feeling, about discovering some wind-down time and enjoying the simple things in life.</p>
+        </div>
+    </div>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'C:/Users/Tom/Desktop/githubprojects/gf_loose_reins/src/Controller/HomepageController.php'|file_link(0) }}">src/Controller/HomepageController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'C:/Users/Tom/Desktop/githubprojects/gf_loose_reins/templates/homepage/index.html.twig'|file_link(0) }}">templates/homepage/index.html.twig</a></code></li>
-    </ul>
-</div>
+    {% for panel in homepage.panels %}
+        {% if loop.index is odd %}
+            {% include "partials/image-text-split.html.twig" with { "content": panel.content, "image": panel.image } only %}
+        {% else %}
+            {% include "partials/image-text-overlay.html.twig" with { "content": panel.content, "image": panel.image } only %}
+        {% endif %}
+    {% endfor %}
+
+    {% include "partials/blog-article-preview.html.twig" %}
+    {% include "partials/four-ctas.html.twig" %}
+
 {% endblock %}

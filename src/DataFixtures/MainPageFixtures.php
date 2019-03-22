@@ -72,7 +72,6 @@ class MainPageFixtures extends Fixture
 
             // Add a reference nav_item#COUNTER#
             $this->addReference(sprintf('%s_%d', 'main_page', $i), $navItem);
-            //self::$counter++;
 
             $manager->persist($navItem);
         }

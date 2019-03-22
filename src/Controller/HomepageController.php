@@ -17,7 +17,7 @@ class HomepageController extends AbstractController
 
         $homepage = $em->getRepository(Homepage::class)->findOneBy(['title' => 'Homepage']);
 
-        return $this->render('default/homepage.html.twig', [
+        return $this->render('homepage/index.html.twig', [
             'homepage' => $homepage
         ]);
     }
