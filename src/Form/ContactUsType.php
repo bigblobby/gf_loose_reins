@@ -16,14 +16,24 @@ class ContactUsType extends AbstractType
     {
         $builder
             ->add('name', TextType::class, [
-                'label' => 'Your Name'
+                'label' => 'Name',
+                'required' => true
             ])
             ->add('email', EmailType::class, [
-                'label' => 'Your Email Address'
+                'label' => 'Email Address',
+                'required' => true
             ])
-            ->add('message')
-            ->add('subscribe')
-            ->add('submit', SubmitType::class)
+            ->add('message', null, [
+                'attr' => [
+                    'class' => 'contact-us-message'
+                ]
+            ])
+            ->add('subscribe', null, [
+                'label' => 'Tick this box to subscribe to our mailing list for News and Special Offers'
+            ])
+            ->add('submit', SubmitType::class, [
+                'label' => 'Send Message'
+            ])
         ;
     }
 

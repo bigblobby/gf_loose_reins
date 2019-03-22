@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Timestampable\Traits\TimestampableEntity;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\ContactUsRepository")
@@ -20,16 +21,19 @@ class ContactUs
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank(message="Please enter your name.")
      */
     private $name;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank(message="Please enter a valid email address.")
+     * @Assert\Email()
      */
     private $email;
 
     /**
-     * @ORM\Column(type="text", length=255)
+     * @ORM\Column(type="text", length=255, nullable=true)
      */
     private $message;
 
