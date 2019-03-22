@@ -1,12 +1,12 @@
-#Cloned site: Loose Reins
+# Cloned site: Loose Reins
 
 This is a full clone of the website of [Loose Reins](https://www.loosereins.co.uk/). It is still a work in progress. Theres an estimated 20-30 hours left. 
 
-####16/03/2019
+#### 16/03/2019
 Hours spent: 35h \
 Commits: 38
 
-##Setting up the site
+## Setting up the site
 
 1. `git clone https://github.com/bigblobby/gf_loose_reins.git`
 2. In your terminal run `composer install` and then `yarn install`
