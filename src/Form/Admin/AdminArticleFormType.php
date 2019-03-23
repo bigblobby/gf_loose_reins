@@ -19,7 +19,10 @@ class AdminArticleFormType extends AbstractType
             ->add('Title', TextType::class)
             ->add('Content', CKEditorType::class)
             ->add('Media')
-            ->add('isPublished', CheckboxType::class)
+            ->add('isPublished', CheckboxType::class, [
+                'required' => false,
+                'label' => 'Publish'
+            ])
             ->add('submit', SubmitType::class)
         ;
     }

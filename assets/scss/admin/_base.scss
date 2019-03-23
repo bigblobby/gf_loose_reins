@@ -1,0 +1,41 @@
+.admin-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    background-color: #29293c;
+
+    h1 {
+        color: #fff;
+    }
+
+    .admin-header-options {
+        position: relative;
+        margin-right: 1rem;
+        color: #fff;
+
+
+        &:hover {
+            ul {
+                display: block;
+            }
+        }
+
+
+        ul {
+            display: none;
+            position: absolute;
+            right: 0;
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            background-color: #fff;
+            color: #29293c;
+            border: 1px solid #cccccc;
+
+            li {
+                padding: 0.5rem 1rem;
+            }
+        }
+    }
+}

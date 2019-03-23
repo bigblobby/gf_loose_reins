@@ -32,7 +32,7 @@ class Article
     private $Media;
 
     /**
-     * @ORM\Column(type="boolean")
+     * @ORM\Column(type="boolean", nullable=true)
      */
     private $isPublished = false;
 

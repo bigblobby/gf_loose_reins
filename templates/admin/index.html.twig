@@ -1,9 +1,29 @@
-{% block title %}Hello AdminController!{% endblock %}
+{% extends "base.html.twig" %}
+
+{% block title %}Admin | Loose Reins{% endblock %}
 
 {% block body %}
 
-    <h1>Admin</h1>
+    <div class="admin-header">
+        <h1>Admin</h1>
+        <div class="admin-header-options">
+            <div>USER</div>
+            <ul>
+                <li>Logout</li>
+            </ul>
+        </div>
+    </div>
 
-    {{ form(form) }}
+    {#<div class="article-editor-container">#}
+        {#<h1>Admin</h1>#}
+        {#{{ form(form) }}#}
+    {#</div>#}
 
 {% endblock %}
+
+{% block navigation %}
+    {% include "admin/navigation.html.twig" %}
+{% endblock %}
+{% block footer %}{% endblock %}
+{% block sticky_book_now %}{% endblock %}
+{% block sticky_social_icons %}{% endblock %}

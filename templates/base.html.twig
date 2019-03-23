@@ -15,56 +15,9 @@
 
         {#-------------MAIN NAVIGATION-------------#}
 
-        <nav class="header-container">
-            <div class="top-nav-container">
-                <ul class="top-nav">
-                    <li><a href="#">Book</a></li>
-                    <li><a href="#">Before you book</a></li>
-                    <li><a href="#">Offers</a></li>
-                    <li><a href="{{ path('app_gallery') }}">Gallery</a></li>
-                    <li><a href="{{ path('app_enquiry_contact') }}">Contact</a></li>
-                </ul>
-            </div>
-            <div class="logo-container">
-                <a href="{{ path('app_default_homepage') }}">
-                    <img class="main-logo" src="{{ asset('images/homepage/LooseReinsLogo.svg') }}" alt="logo">
-                </a>
-            </div>
-            <div class="bottom-nav-container">
-                <ul class="bottom-nav">
-
-                    {# @var link \App\Entity\MainPage #}
-                    {% for link in main_navigation() %}
-                        <li><a class="{{ link.slug == app.request.attributes.get('mainSlug') ? 'active' }}" href="{{ path('app_default_page', {'mainSlug': link.slug}) }}">{{ link.title}}</a></li>
-                    {% endfor %}
-
-                    <li class="mobile-nav-item"><a href="#">Book</a></li>
-                    <li class="mobile-nav-item"><a href="#">Before you book</a></li>
-                    <li class="mobile-nav-item"><a href="#">Offers</a></li>
-                    <li class="mobile-nav-item"><a href="{{ path('app_gallery') }}">Gallery</a></li>
-                    <li class="mobile-nav-item"><a href="{{ path('app_enquiry_contact') }}">Contact</a></li>
-                </ul>
-            </div>
-
-            {# @var sublink \App\Entity\Page #}
-            {% if subPages is defined %}
-                <div class="dropdown-nav-container">
-                    <ul class="dropdown-nav">
-                        {% for subPage in subPages %}
-                            {% if subPage.title is not empty %}
-                                <li><a class="sublink {{ subPage.slug == app.request.attributes.get('slug') ? 'active' }}" href="{{ path('app_default_page', {'mainSlug': subPage.mainPage.slug, 'slug': subPage.slug }) }}">{{ subPage.title }}</a></li>
-                            {% endif %}
-                        {% endfor %}
-                    </ul>
-                </div>
-            {% endif %}
-
-            <button class="mobile-menu-btn">
-                <span class="menu-line"></span>
-                <span class="menu-line"></span>
-                <span class="menu-line"></span>
-            </button>
-        </nav>
+        {% block navigation %}
+            {% include "layout/navigation.html.twig" %}
+        {% endblock %}
 
         {#------------CONTENT-------------#}
 
@@ -72,30 +25,9 @@
 
         {#------------FOOTER--------------#}
 
-        <footer class="footer">
-            <div class="left-container">
-                <address>
-                    Loose Reins,<br>
-                    Ridgeway Farm,<br>
-                    Shillingstone,<br>
-                    Dorset,<br>
-                    DT11 0TF
-                </address>
-            </div>
-            <div class="right-container">
-                {% include "partials/social-icons.html.twig" %}
-                <p class="contact-number">01258 863533</p>
-                <div class="footer-nav">
-                    <a href="#">FAQs</a>
-                    <a href="#">Accessibility Guide</a>
-                    <a href="#">Terms &amp; Conditions</a>
-                    <a href="#">Eco Policy</a>
-                    <a href="#">Privacy</a>
-                </div>
-                <button class="signup">Signup</button>
-                <p class="copyright">Website by Tom Dempster &copy; {{ "now"|date('Y') }}</p>
-            </div>
-        </footer>
+        {% block footer %}
+            {% include "layout/footer.html.twig" %}
+        {% endblock %}
 
         {#---------------STICKY BOOK NOW BUTTON-----------------#}
 
