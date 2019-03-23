@@ -7,10 +7,23 @@
     <div class="admin-header">
         <h1>Admin</h1>
         <div class="admin-header-options">
-            <div>USER</div>
+            <div>Hello, Tom <i class="fas fa-angle-down"></i></div>
             <ul>
-                <li>Logout</li>
+                <li><a href="">Logout</a></li>
             </ul>
+        </div>
+    </div>
+
+    <div class="side-navigation">
+        <div>
+            <div class="admin-dropdown-container">
+                <span class="nav-list-items"><a class="nav-links" href="#"><i class="fas fa-book-open"></i><span>Articles</span><i class="fas fa-chevron-left"></i></a></span>
+                <ul class="admin-dropdown">
+                    <li><a href="">View All</a></li>
+                    <li><a href="">Create</a></li>
+                </ul>
+            </div>
+            <span class="nav-list-items"><a class="nav-links" href="#"><i class="fas fa-cog"></i><span>Settings</span></a></span>
         </div>
     </div>
 
@@ -27,3 +40,4 @@
 {% block footer %}{% endblock %}
 {% block sticky_book_now %}{% endblock %}
 {% block sticky_social_icons %}{% endblock %}
+{% block javascripts %}{{ parent() }}{% endblock %}

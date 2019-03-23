@@ -21,6 +21,23 @@ $(document).ready(function(){
     });
 });
 
+(function(){
+    const dropdowns = document.querySelectorAll('.admin-dropdown-container');
+
+    dropdowns.forEach( dropdown => {
+        dropdown.addEventListener('click', function(e){
+            const dropper = e.currentTarget.lastElementChild;
+
+            if(dropper.style.height){
+                dropper.style.height = null;
+            } else {
+                dropdowns.forEach( dd => dd.lastElementChild.style.height = null);
+                dropper.style.height = dropper.scrollHeight + 'px';
+            }
+        });
+    });
+})();
+
 // Navigation Burger Menu
 (function(){
     let nav = document.querySelector('.bottom-nav');
@@ -84,6 +101,10 @@ $(document).ready(function(){
         }
     }
 })();
+
+// ADMIN
+
+
 
 
 

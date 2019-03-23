@@ -3,7 +3,8 @@
     justify-content: space-between;
     align-items: center;
     padding: 0.5rem 1rem;
-    background-color: #29293c;
+    background-color: darken(#263245, 5%);
+    font-family: Arial, Helvetica, sans-serif;
 
     h1 {
         color: #fff;
@@ -35,6 +36,82 @@
 
             li {
                 padding: 0.5rem 1rem;
+            }
+        }
+    }
+}
+
+.side-navigation {
+    height: calc(100vh - 72px);
+    width: 250px;
+    background-color: #263245;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.25rem;
+
+    > div {
+        list-style: none;
+        padding: 1rem 0 0;
+        margin: 0;
+        color: #fff;
+
+        .admin-dropdown-container {
+
+            .fa-chevron-left {
+                transition: transform 0.2s;
+            }
+
+            &:hover {
+                background-color: lighten(#263245, 10%);
+
+                .fa-chevron-left {
+                    transform: rotate(-90deg) translate(10px, -10px);
+                    transition: transform 0.2s;
+                }
+            }
+
+            .admin-dropdown {
+                height: 0;
+                overflow: hidden;
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                transition: height 0.2s;
+
+                li {
+                    &:hover {
+                        background-color: lighten(#263245, 15%);
+                    }
+
+                    a {
+                        display: block;
+                        padding: 0.5rem 1rem 0.5rem 3rem;
+                        text-decoration: none;
+                        color: lighten(#263245, 35%);
+                    }
+                }
+            }
+        }
+
+        .nav-list-items {
+            .nav-links {
+                display: flex;
+                align-items: center;
+                color: lighten(#263245, 55%);
+                text-decoration: none;
+                padding: 0.5rem 1rem;
+
+                &:hover {
+                    background-color: lighten(#263245, 10%);
+                }
+
+                i {
+                    width: 30px;
+                    font-size: 1rem;
+                }
+
+                span {
+                    margin-right: auto;
+                }
             }
         }
     }
