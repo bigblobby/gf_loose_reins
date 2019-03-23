@@ -3,6 +3,7 @@
 namespace App\Form\Admin;
 
 use App\Entity\Article;
+use FOS\CKEditorBundle\Form\Type\CKEditorType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
@@ -16,7 +17,7 @@ class AdminArticleFormType extends AbstractType
     {
         $builder
             ->add('Title', TextType::class)
-            ->add('Content')
+            ->add('Content', CKEditorType::class)
             ->add('Media')
             ->add('isPublished', CheckboxType::class)
             ->add('submit', SubmitType::class)
