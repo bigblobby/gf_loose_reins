@@ -16,6 +16,8 @@
 
     <div class="side-navigation">
         <div>
+            <span class="nav-list-items"><a class="nav-links" href="#"><i class="fas fa-home"></i><span>Homepage</span></a></span>
+            <span class="nav-list-items"><a class="nav-links" href="#"><i class="fas fa-link"></i></i><span>Navigation</span></a></span>
             <div class="admin-dropdown-container">
                 <span class="nav-list-items"><a class="nav-links" href="#"><i class="fas fa-book-open"></i><span>Articles</span><i class="fas fa-chevron-left"></i></a></span>
                 <ul class="admin-dropdown">
@@ -23,6 +25,8 @@
                     <li><a href="">Create</a></li>
                 </ul>
             </div>
+
+            <span class="nav-list-items"><a class="nav-links" href="#"><i class="fas fa-sticky-note"></i><span>Pages</span></a></span>
             <span class="nav-list-items"><a class="nav-links" href="#"><i class="fas fa-cog"></i><span>Settings</span></a></span>
         </div>
     </div>
@@ -40,4 +44,3 @@
 {% block footer %}{% endblock %}
 {% block sticky_book_now %}{% endblock %}
 {% block sticky_social_icons %}{% endblock %}
-{% block javascripts %}{{ parent() }}{% endblock %}
