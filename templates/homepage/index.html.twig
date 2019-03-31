@@ -4,21 +4,23 @@
 
 {% block body %}
 
+    {#---------Header----------#}
     <div class="homepage-header">
         <div class="homepage-image-container"></div>
         <div class="homepage-banner">
-            <h1>LUXURY GLAMPING WITH A FRONTIER CHARM.</h1>
-            <p>When the trail is stretching out in front of you, the sky is blue above you and the daily grind is well and truly to the rear, that’s one amazing feeling. Loose Reins is all about finding and enjoying that feeling, about discovering some wind-down time and enjoying the simple things in life.</p>
+            {{ homepage.headerContent|raw }}
         </div>
     </div>
 
-    {% for panel in homepage.panels %}
-        {% if loop.index is odd %}
-            {% include "partials/image-text-split.html.twig" with { "content": panel.content, "image": panel.image } only %}
-        {% else %}
-            {% include "partials/image-text-overlay.html.twig" with { "content": panel.content, "image": panel.image } only %}
-        {% endif %}
-    {% endfor %}
+    {#---------Box One----------#}
+    {% if homepage.boxOneContent is defined %}
+        {% include "partials/image-text-split.html.twig" with { "content": homepage.boxOneContent, "image": homepage.boxOneImage } only %}
+    {% endif %}
+
+    {#---------Box Two----------#}
+    {% if homepage.boxTwoContent is defined %}
+        {% include "partials/image-text-overlay.html.twig" with { "content": homepage.boxTwoContent, "image": homepage.boxTwoImage } only %}
+    {% endif %}
 
     {% include "partials/blog-article-preview.html.twig" %}
     {% include "partials/four-ctas.html.twig" %}

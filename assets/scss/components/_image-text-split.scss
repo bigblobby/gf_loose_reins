@@ -30,6 +30,28 @@
         @include media-breakpoint-down(md){
             padding: 2rem;
         }
+
+        p {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        a {
+            display: inline-block;
+            font-family: 'Lora', serif;
+            font-size: 1.25rem;
+            font-style: italic;
+            text-decoration: none;
+            background-color: #475356;
+            color: #fff;
+            padding: 0.75rem 3rem;
+            border: 1px solid transparent;
+            transition: all 0.2s ease-out;
+
+            &:hover {
+                background-color: #de6d4d;
+            }
+        }
     }
     
     .split-right-image {

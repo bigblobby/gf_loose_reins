@@ -10,6 +10,16 @@ easy_admin:
         actions: ['show']
     entities:
         # List the entity class name you want to manage
+        Homepage:
+            class: App\Entity\Homepage
+            form:
+                fields:
+                    - 'title'
+                    - {property: 'headerContent', type: 'fos_ckeditor'}
+                    - 'boxOneImage'
+                    - {property: 'boxOneContent', type: 'fos_ckeditor'}
+                    - 'boxTwoImage'
+                    - {property: 'boxTwoContent', type: 'fos_ckeditor'}
         Navigation:
             class: App\Entity\Navigation
 #        MainPage:
@@ -23,4 +33,16 @@ easy_admin:
 #            label: Sub Nav/Pages
 #            list:
 #                title: Sub Navigation/Pages
+        Page:
+            class: App\Entity\Page
+        Panel:
+            class: App\Entity\Panel
+            form:
+                fields:
+                    - 'id'
+                    - {property: 'content', type: 'fos_ckeditor'}
+                    - 'image'
+                    - 'weight'
+                    - 'layout'
+                    - 'page'
 

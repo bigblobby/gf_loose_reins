@@ -15,14 +15,10 @@ class HomepageController extends AbstractController
      */
     public function homepageAction(EntityManagerInterface $em)
     {
-
         $homepage = $em->getRepository(Homepage::class)->findOneBy(['title' => 'Homepage']);
-
-        //$mainNav = $em->getRepository(Navigation::class)->findMainNavigation();
 
         return $this->render('homepage/index.html.twig', [
             'homepage' => $homepage,
-            //'mainNav' => $mainNav
         ]);
     }
 }

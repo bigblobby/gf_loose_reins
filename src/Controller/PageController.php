@@ -13,24 +13,23 @@ class PageController extends AbstractController
 {
     /**
      * @Route("/{mainSlug}/{slug}", name="app_default_page",
-     *   requirements={"mainSlug": "cabins|lodges|loose-reins-country|out-and-about|pantry|loose-talk|reviews|test"},
+     *   requirements={"mainSlug": "cabins|lodges|loose-reins-country|out-and-about|pantry|loose-talk|reviews"},
      *   defaults={"slug": ""}
      * )
      */
     public function pageAction(EntityManagerInterface $em, $mainSlug, $slug)
     {
-        // Get the one main page, then find all of its sub pages
-        //$mainPage = $em->getRepository(MainPage::class)->findOneBy(['slug' => $mainSlug]);
-        //$subPages = $mainPage->getPages();
+        // This returns an array of 1 item
+        $mainNav = $em->getRepository(Navigation::class)->findBy(['slug' => $mainSlug, 'parent' => null], [], 1);
 
-        $mainPage = $em->getRepository(Navigation::class)->findOneBy(['slug' => $mainSlug]);
-        $subPages = $mainPage->getNavigations();
+        $subPages = $mainNav[0]->getNavigations();
+        $mainPage = $mainNav[0]->getPage();
 
         // If sub link is clicked
         if($slug){
-            //$subPage = $em->getRepository(Page::class)->findOneBy(['slug' => $slug]);
+            $subNav = $em->getRepository(Navigation::class)->findOneBy(['slug' => $slug]);
 
-            $subPage = $em->getRepository(Navigation::class)->findOneBy(['slug' => $slug]);
+            $subPage = $subNav->getPage();
 
             return $this->render('page/sub-page.html.twig', [
                 'subPages' => $subPages,

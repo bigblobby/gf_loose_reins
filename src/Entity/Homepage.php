@@ -25,14 +25,29 @@ class Homepage
     private $title;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="text")
      */
-    private $route;
+    private $headerContent;
 
     /**
-     * @ORM\Column(type="json")
+     * @ORM\Column(type="text", nullable=true)
      */
-    private $panels = [];
+    private $boxOneContent;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $boxOneImage;
+
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $boxTwoContent;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $boxTwoImage;
 
     public function getId(): ?int
     {
@@ -51,27 +66,64 @@ class Homepage
         return $this;
     }
 
-    public function getRoute(): ?string
+    public function getHeaderContent(): ?string
     {
-        return $this->route;
+        return $this->headerContent;
     }
 
-    public function setRoute(string $route): self
+    public function setHeaderContent(string $headerContent): self
     {
-        $this->route = $route;
+        $this->headerContent = $headerContent;
 
         return $this;
     }
 
-    public function getPanels(): ?array
+    public function getBoxOneContent(): ?string
     {
-        return $this->panels;
+        return $this->boxOneContent;
     }
 
-    public function setPanels(array $panels): self
+    public function setBoxOneContent(?string $boxOneContent): self
     {
-        $this->panels = $panels;
+        $this->boxOneContent = $boxOneContent;
 
         return $this;
     }
+
+    public function getBoxOneImage(): ?string
+    {
+        return $this->boxOneImage;
+    }
+
+    public function setBoxOneImage(?string $boxOneImage): self
+    {
+        $this->boxOneImage = $boxOneImage;
+
+        return $this;
+    }
+
+    public function getBoxTwoContent(): ?string
+    {
+        return $this->boxTwoContent;
+    }
+
+    public function setBoxTwoContent(?string $boxTwoContent): self
+    {
+        $this->boxTwoContent = $boxTwoContent;
+
+        return $this;
+    }
+
+    public function getBoxTwoImage(): ?string
+    {
+        return $this->boxTwoImage;
+    }
+
+    public function setBoxTwoImage(?string $boxTwoImage): self
+    {
+        $this->boxTwoImage = $boxTwoImage;
+
+        return $this;
+    }
+
 }

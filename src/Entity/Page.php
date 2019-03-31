@@ -2,17 +2,15 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
-use Gedmo\Mapping\Annotation as Gedmo;
-use Gedmo\Timestampable\Traits\TimestampableEntity;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\PageRepository")
  */
 class Page
 {
-    use TimestampableEntity;
-
     /**
      * @ORM\Id()
      * @ORM\GeneratedValue()
@@ -21,36 +19,31 @@ class Page
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=100)
+     * @ORM\Column(type="string", length=255)
      */
     private $title;
 
     /**
-     * @ORM\Column(type="string", length=100, nullable=true)
-     * @Gedmo\Slug(fields={"title"})
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private $slug;
+    private $image;
 
     /**
-     * @ORM\Column(type="text", nullable=true)
+     * @ORM\OneToOne(targetEntity="App\Entity\Navigation", inversedBy="page", cascade={"persist", "remove"})
+     * @ORM\JoinColumn(nullable=false)
      */
-    private $preview;
+    private $navigation;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\OneToMany(targetEntity="App\Entity\Panel", mappedBy="page")
+     * @ORM\OrderBy({"weight" = "ASC"})
      */
-    private $previewImage;
+    private $panels;
 
-    /**
-     * @ORM\Column(type="json")
-     */
-    private $panels = [];
-
-    /**
-     * @ORM\ManyToOne(targetEntity="MainPage", inversedBy="pages")
-     * @ORM\JoinColumn(nullable=true)
-     */
-    private $mainPage;
+    public function __construct()
+    {
+        $this->panels = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -69,62 +62,57 @@ class Page
         return $this;
     }
 
-    public function getSlug(): ?string
+    public function getImage(): ?string
     {
-        return $this->slug;
+        return $this->image;
     }
 
-    public function setSlug(string $slug): self
+    public function setImage(?string $image): self
     {
-        $this->slug = $slug;
+        $this->image = $image;
 
         return $this;
     }
 
-    public function getPreview(): ?string
+    public function getNavigation(): ?Navigation
     {
-        return $this->preview;
+        return $this->navigation;
     }
 
-    public function setPreview(string $preview): self
+    public function setNavigation(Navigation $navigation): self
     {
-        $this->preview = $preview;
+        $this->navigation = $navigation;
 
         return $this;
     }
 
-    public function getPreviewImage(): ?string
-    {
-        return $this->previewImage;
-    }
-
-    public function setPreviewImage(string $previewImage): self
-    {
-        $this->previewImage = $previewImage;
-
-        return $this;
-    }
-
-    public function getPanels(): ?array
+    /**
+     * @return Collection|Panel[]
+     */
+    public function getPanels(): Collection
     {
         return $this->panels;
     }
 
-    public function setPanels(array $panels): self
+    public function addPanel(Panel $panel): self
     {
-        $this->panels = $panels;
+        if (!$this->panels->contains($panel)) {
+            $this->panels[] = $panel;
+            $panel->setPage($this);
+        }
 
         return $this;
     }
 
-    public function getMainPage(): ?MainPage
+    public function removePanel(Panel $panel): self
     {
-        return $this->mainPage;
-    }
-
-    public function setMainPage(?MainPage $mainPage): self
-    {
-        $this->mainPage = $mainPage;
+        if ($this->panels->contains($panel)) {
+            $this->panels->removeElement($panel);
+            // set the owning side to null (unless already changed)
+            if ($panel->getPage() === $this) {
+                $panel->setPage(null);
+            }
+        }
 
         return $this;
     }

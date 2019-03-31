@@ -43,6 +43,11 @@ class Navigation
      */
     private $navigations;
 
+    /**
+     * @ORM\OneToOne(targetEntity="App\Entity\Page", mappedBy="navigation", cascade={"persist", "remove"})
+     */
+    private $page;
+
     public function __construct()
     {
         $this->navigations = new ArrayCollection();
@@ -123,5 +128,22 @@ class Navigation
     public function __toString()
     {
         return $this->getTitle();
+    }
+
+    public function getPage(): ?Page
+    {
+        return $this->page;
+    }
+
+    public function setPage(Page $page): self
+    {
+        $this->page = $page;
+
+        // set the owning side of the relation if necessary
+        if ($this !== $page->getNavigation()) {
+            $page->setNavigation($this);
+        }
+
+        return $this;
     }
 }

@@ -2,6 +2,8 @@
 
     .page-image-container {
         position: relative;
+        min-height: 500px;
+        background-color: #504b23;
 
         &:after {
             content: '';

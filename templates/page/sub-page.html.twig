@@ -5,12 +5,15 @@
 {% block body %}
 
     {#--------------SUB PAGE TITLE AND BANNER IMAGE--------------#}
-    {#{% include "partials/page-header.html.twig" with {"title": subPage.title,"image": subPage.previewImage} %}#}
+    {% include "partials/page-header.html.twig" with {"title": subPage.title,"image": subPage.image} %}
 
     {#--------------SUB PAGE PANELS-------------#}
-    {#{% include "panels/curated-content.html.twig" with {"panels": subPage.panels} only %}#}
+    {# @var panel \App\Entity\Panel #}
+    {% for panel in subPage.panels %}
+        {% include "panels/curated-content.html.twig" with {"panel": panel} only %}
+    {% endfor %}
 
 
-    {#{% include "partials/four-image-row.html.twig" %}#}
+    {% include "partials/four-image-row.html.twig" %}
 
 {% endblock %}
