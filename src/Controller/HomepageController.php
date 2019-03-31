@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Homepage;
+use App\Entity\Navigation;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
@@ -17,8 +18,11 @@ class HomepageController extends AbstractController
 
         $homepage = $em->getRepository(Homepage::class)->findOneBy(['title' => 'Homepage']);
 
+        //$mainNav = $em->getRepository(Navigation::class)->findMainNavigation();
+
         return $this->render('homepage/index.html.twig', [
-            'homepage' => $homepage
+            'homepage' => $homepage,
+            //'mainNav' => $mainNav
         ]);
     }
 }

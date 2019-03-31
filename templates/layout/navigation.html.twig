@@ -35,7 +35,7 @@
             <ul class="dropdown-nav">
                 {% for subPage in subPages %}
                     {% if subPage.title is not empty %}
-                        <li><a class="sublink {{ subPage.slug == app.request.attributes.get('slug') ? 'active' }}" href="{{ path('app_default_page', {'mainSlug': subPage.mainPage.slug, 'slug': subPage.slug }) }}">{{ subPage.title }}</a></li>
+                        <li><a class="sublink {{ subPage.slug == app.request.attributes.get('slug') ? 'active' }}" href="{{ path('app_default_page', {'mainSlug': subPage.parent.slug, 'slug': subPage.slug }) }}">{{ subPage.title }}</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>

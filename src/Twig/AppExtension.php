@@ -3,6 +3,7 @@
 namespace App\Twig;
 
 use App\Entity\MainPage;
+use App\Entity\Navigation;
 use Doctrine\ORM\EntityManagerInterface;
 use Twig\Extension\AbstractExtension;
 use Twig\TwigFilter;
@@ -41,6 +42,6 @@ class AppExtension extends AbstractExtension
 
     public function loadMainNavigation()
     {
-        return $this->em->getRepository(MainPage::class)->findAll();
+        return $this->em->getRepository(Navigation::class)->findMainNavigation();
     }
 }

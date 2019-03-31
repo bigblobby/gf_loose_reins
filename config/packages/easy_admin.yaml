@@ -10,15 +10,17 @@ easy_admin:
         actions: ['show']
     entities:
         # List the entity class name you want to manage
-        MainPage:
-            class: App\Entity\MainPage
-            label: Navigation
-            help: 'Here are the main navigation links for the site'
-            list:
-                help: 'Here are all the main navigation links for the site'
-        Page:
-            class: App\Entity\Page
-            label: Sub Nav/Pages
-            list:
-                title: Sub Navigation/Pages
+        Navigation:
+            class: App\Entity\Navigation
+#        MainPage:
+#            class: App\Entity\MainPage
+#            label: Navigation
+#            help: 'Here are the main navigation links for the site'
+#            list:
+#                help: 'Here are all the main navigation links for the site'
+#        Page:
+#            class: App\Entity\Page
+#            label: Sub Nav/Pages
+#            list:
+#                title: Sub Navigation/Pages
 
