@@ -11,7 +11,10 @@ use Symfony\Component\Routing\Annotation\Route;
 class PageController extends AbstractController
 {
     /**
-     * @Route("/{mainSlug}/{slug}", name="app_default_page", defaults={"slug": ""})
+     * @Route("/{mainSlug}/{slug}", name="app_default_page",
+     *   requirements={"mainSlug": "cabins|lodges|loose-reins-country|out-and-about|pantry|loose-talk|reviews|test"},
+     *   defaults={"slug": ""}
+     * )
      */
     public function pageAction(EntityManagerInterface $em, $mainSlug, $slug)
     {
