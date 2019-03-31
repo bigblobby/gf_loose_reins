@@ -3,13 +3,26 @@
     overflow: hidden;
     height: 800px;
 
+    &.taller {
+        height: 1000px;
+    }
+
     @media screen and (min-width: 1600px){
         height: 900px;
+
+        &.taller {
+            height: 1000px;
+        }
     }
 
     @include media-breakpoint-down(md){
         height: auto;
+
+        &.taller {
+            height: auto;
+        }
     }
+
 
     img {
         // NOTE: position, top, left and transform are not actually needed, a very
@@ -43,7 +56,7 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        padding: 0 6rem;
+        padding: 2rem 6rem;
 
         @media screen and (min-width: 1600px){
             top: 100px;
@@ -63,6 +76,7 @@
             bottom: auto;
             left: auto;
             padding: 2rem 3rem;
+            width: 100%;
         }
 
         @include media-breakpoint-down(sm){
@@ -74,6 +88,7 @@
         }
 
         a {
+            display: inline-block;
             font-family: 'Lora', serif;
             font-size: 1.25rem;
             font-style: italic;

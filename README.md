@@ -6,6 +6,10 @@ This is a full clone of the website of [Loose Reins](https://www.loosereins.co.u
 Hours spent: 35h \
 Commits: 38
 
+#### 31/03/2019
+Hours spent: 50h \
+Commits: 52
+
 ## Setting up the site
 
 1. `git clone https://github.com/bigblobby/gf_loose_reins.git`

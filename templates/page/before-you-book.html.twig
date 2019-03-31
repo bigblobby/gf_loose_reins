@@ -1,10 +1,48 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}
-
-{% endblock %}
+{% block title %}Before You Book | Loose Reins{% endblock %}
 
 {% block body %}
+
+    {% set contentBlockOne = '
+    <h2>Children\'s Horse Riding </h2>
+    <p>Please call the office on 01258 863533 to enquire about horse riding availability for children before you book your accommodation
+    (if your children wish to ride). We get very busy and our calendar fills up quickly so always check to avoid disappointment.</p>
+    <h2>Our Cabins & Lodges…</h2>
+    <p class="text-center"><a href="/cabins" class="small-link">Trappers</a>&nbsp;-&nbsp;Cedar Cabin (sleeps four people) </p>
+    <p class="text-center"><a href="/cabins" class="small-link">Gold Panners</a>&nbsp;-&nbsp;Cedar Cabin (sleeps four people) </p>
+    <p class="text-center"><a href="/cabins" class="small-link">Ranchers</a>&nbsp;-&nbsp;Cedar Cabin (sleeps four people) </p>
+    <p class="text-center"><a href="/lodges" class="small-link">West Coombe</a>&nbsp;-&nbsp;Canvas Lodge (sleeps six people) </p>
+    <p class="text-center"><a href="/lodges" class="small-link">Hazel Meade</a>&nbsp;-&nbsp;Canvas Lodge (sleeps six people) </p>
+    <p class="text-center"><a href="/lodges" class="small-link">Foresters</a>&nbsp;-&nbsp;Canvas Lodge (sleeps six people) </p>
+    <p class="text-center"><a href="/cabins/bedrooms" class="small-link">Cabins Bedrooms</a>&nbsp;-&nbsp;All one room &nbsp;-&nbsp;
+    One king size bed and two occasional single bunks that are formed out of the seating area. We recommend that
+    a group of four adults choose a canvas lodge or two separate cabins.</p>
+    <p><a href="/cabins">Cabins</a></p>
+    <p class="text-center"><a href="/lodges" class="small-link">Lodge Bedrooms</a>&nbsp;-&nbsp;Seperate rooms&nbsp;-&nbsp;
+    King size four poster bed, king size cabin bed and two single beds - space for one travel cot.</p>
+    <p><a href="/lodges">Lodges</a></p>
+    '|raw %}
+
+    {% set contentBlockTwo = '
+    <h2>Your Four-Legged Friends</h2>
+    <p class="text-center">Dogs are more than welcome at Loose Reins. We allow up to two dogs per cabin/lodge. There is a £25 supplement per dog. </p>
+    <p><a href="/cabins/dogs">Read More</a><p>
+    <h2>What\'s Included?</h2>
+    <p class="text-center">There\'s lots included at Loose Reins, if you want to know more click the buttons to view what we include!</p>
+    <p><a href="/sites/default/files/inline-files/What%27s%20included%20lodges%20_0.pdf">What\'s included in the Lodges?</a></p>
+    <p><a href="/sites/default/files/inline-files/What%27s%20included%20cabins_0.pdf">What\'s included in the Cabins?</a></p>
+    <h2>Arrivals and Departures:</h2>
+    <p class="text-center">Arrival Days: Mondays, Wednesdays and Fridays (only Mondays and Fridays in the school holidays)
+    Arrival Time: 4pm
+    Departure Time: 10am </p>
+    '|raw %}
+
+    {% include "panels/partials/page-header.html.twig" with {title: 'Before you book', image: 'images/before-you-book/before-you-book.jpg'} %}
+
+    {% include "panels/partials/image-text-split.html.twig" with {content: contentBlockOne, image: 'images/before-you-book/first-box-image.jpg'} %}
+
+    {% include "panels/partials/image-text-overlay.html.twig" with {content: contentBlockTwo, image: 'images/before-you-book/second-box-image.jpg', className: 'taller'} %}
 
 {% endblock %}
 
