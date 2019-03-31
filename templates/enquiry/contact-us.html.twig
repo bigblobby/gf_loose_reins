@@ -6,15 +6,15 @@
 
     <div class="contact-us-container">
         <div class="contact-us-intro-container">
-            <p>{{ page.panels.intro }}</p>
-            <address>{{ page.panels.address|raw }}</address>
-            <p>{{ page.panels.contactNumber }}</p>
-            <a href="">{{ page.panels.findUs }}</a>
-            <a href="">{{ page.panels.directions }}</a>
+            <p>We'd love to hear from you! Please get in touch if you'd like to visit or have any questions about Loose Reins.</p>
+            <address>Ridgeway Farm,<br>Shillingstone,<br>Dorset,<br>DT11 0TF</address>
+            <p>01258 863533</p>
+            <a href="">How To Find Us</a>
+            <a href="">Download Directions</a>
             {% include "form/contact-us-form.html.twig" with {form: form} only %}
         </div>
         <div class="contact-us-image-container">
-            <img src="{{ page.previewImage }}" alt="">
+            <img src="{{ asset('images/contact_form/image-1.jpg') }}" alt="">
         </div>
     </div>
 

@@ -14,15 +14,15 @@
 
     {#---------Box One----------#}
     {% if homepage.boxOneContent is defined %}
-        {% include "partials/image-text-split.html.twig" with { "content": homepage.boxOneContent, "image": homepage.boxOneImage } only %}
+        {% include "panels/partials/image-text-split.html.twig" with { "content": homepage.boxOneContent, "image": homepage.boxOneImage } only %}
     {% endif %}
 
     {#---------Box Two----------#}
     {% if homepage.boxTwoContent is defined %}
-        {% include "partials/image-text-overlay.html.twig" with { "content": homepage.boxTwoContent, "image": homepage.boxTwoImage } only %}
+        {% include "panels/partials/image-text-overlay.html.twig" with { "content": homepage.boxTwoContent, "image": homepage.boxTwoImage } only %}
     {% endif %}
 
-    {% include "partials/blog-article-preview.html.twig" %}
-    {% include "partials/four-ctas.html.twig" %}
+    {% include "panels/partials/blog-article-preview.html.twig" %}
+    {% include "panels/partials/four-ctas.html.twig" %}
 
 {% endblock %}

@@ -4,6 +4,12 @@ easy_admin:
         brand_color: "#a1c349"
         assets:
             css: []
+        menu:
+            - {entity: 'Homepage', icon: 'home'}
+            - {entity: 'Navigation', icon: 'link'}
+            - {entity: 'Page', icon: 'sticky-note'}
+            - {entity: 'Panel', icon: 'table'}
+            - {entity: 'ContactUs', icon: 'envelope', label: 'Contact'}
 
     list:
         title: '%%entity_label%%'
@@ -22,27 +28,59 @@ easy_admin:
                     - {property: 'boxTwoContent', type: 'fos_ckeditor'}
         Navigation:
             class: App\Entity\Navigation
-#        MainPage:
-#            class: App\Entity\MainPage
-#            label: Navigation
-#            help: 'Here are the main navigation links for the site'
-#            list:
-#                help: 'Here are all the main navigation links for the site'
-#        Page:
-#            class: App\Entity\Page
-#            label: Sub Nav/Pages
-#            list:
-#                title: Sub Navigation/Pages
+            list:
+                fields:
+                    - 'id'
+                    - 'title'
+                    - 'parent'
+                    - {property: 'navigations', label: 'Child Links'}
+                    - 'page'
+                sort: ['parent.title', 'ASC']
+            new:
+                fields:
+                    - 'title'
+                    - 'parent'
+                    - 'navigations'
+                    - 'page'
+            edit:
+                fields:
+                    - 'title'
+                    - 'parent'
+                    - 'navigations'
+                    - 'page'
         Page:
             class: App\Entity\Page
         Panel:
             class: App\Entity\Panel
             form:
                 fields:
-                    - 'id'
                     - {property: 'content', type: 'fos_ckeditor'}
-                    - 'image'
+                    - {property: 'image'}
                     - 'weight'
-                    - 'layout'
+                    - { property: 'layout', type: 'choice', type_options: {choices: {'Image with text box overlay':'image-text-overlay', 'Text box with image 50/50 ':'image-text-split'}}}
                     - 'page'
-
+            list:
+                fields:
+                    - 'id'
+                    - 'page'
+                    - 'layout'
+                    - 'weight'
+                    - {property: 'image', type: image}
+        ContactUs:
+            class: App\Entity\ContactUs
+            list:
+                title: 'Contact'
+                help: 'List of emails received'
+                fields:
+                    - 'id'
+                    - 'name'
+                    - 'email'
+                    - 'message'
+                    - {property: 'subscribe', type: 'boolean', label: 'Subscribed'}
+                    - {property: 'createdAt', label: 'Received at'}
+            edit:
+                fields:
+                    - 'name'
+                    - 'email'
+                    - 'message'
+                    - 'subscribe'

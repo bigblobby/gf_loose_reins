@@ -2,15 +2,21 @@
 
 namespace App\Controller;
 
-use App\Entity\MainPage;
 use App\Entity\Navigation;
-use App\Entity\Page;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
 class PageController extends AbstractController
 {
+    /**
+     * @Route("/before-you-book", name="app_page_before_you_book")
+     */
+    public function beforeYouBookAction()
+    {
+        return $this->render('page/before-you-book.html.twig');
+    }
+
     /**
      * @Route("/{mainSlug}/{slug}", name="app_default_page",
      *   requirements={"mainSlug": "cabins|lodges|loose-reins-country|out-and-about|pantry|loose-talk|reviews"},

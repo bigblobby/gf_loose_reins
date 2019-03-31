@@ -17,7 +17,7 @@ class EnquiryController extends AbstractController
      */
     public function index(EntityManagerInterface $em, Request $request)
     {
-        $page = $em->getRepository(Page::class)->findOneBy(['slug' => 'contact-us']);
+        //$page = $em->getRepository(Page::class)->findOneBy(['slug' => 'contact-us']);
 
         // Create form
         $enquiry = new ContactUs();
@@ -35,7 +35,7 @@ class EnquiryController extends AbstractController
         }
 
         return $this->render("enquiry/contact-us.html.twig", [
-            'page' => $page,
+            //'page' => $page,
             'form' => $form->createView()
         ]);
     }

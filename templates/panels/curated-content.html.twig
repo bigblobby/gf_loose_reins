@@ -1,5 +1,5 @@
 {% if panel.layout == "image-text-overlay" %}
-    {% include "partials/image-text-overlay.html.twig" with {"content": panel.content, "image": panel.image } only %}
+    {% include "panels/partials/image-text-overlay.html.twig" with {"content": panel.content, "image": panel.image } only %}
 {% elseif panel.layout == "image-text-split" %}
-    {% include "partials/image-text-split.html.twig" with {"content": panel.content, "image": panel.image } only %}
+    {% include "panels/partials/image-text-split.html.twig" with {"content": panel.content, "image": panel.image } only %}
 {% endif %}
