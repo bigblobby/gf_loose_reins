@@ -3,12 +3,16 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Gedmo\Mapping\Annotation as Gedmo;
+use Gedmo\Timestampable\Traits\TimestampableEntity;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\ArticleRepository")
  */
 class Article
 {
+    use TimestampableEntity;
+
     /**
      * @ORM\Id()
      * @ORM\GeneratedValue()
@@ -19,20 +23,36 @@ class Article
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $Title;
+    private $title;
 
     /**
-     * @ORM\Column(type="text", length=255)
+     * @ORM\Column(type="string", length=100, unique=true)
+     * @Gedmo\Slug(fields={"title"})
      */
-    private $Content;
+    private $slug;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $primaryImage;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private $Media;
+    private $secondaryImage;
 
     /**
-     * @ORM\Column(type="boolean", nullable=true)
+     * @ORM\Column(type="text")
+     */
+    private $content;
+
+    /**
+     * @ORM\Column(type="text")
+     */
+    private $summary;
+
+    /**
+     * @ORM\Column(type="boolean")
      */
     private $isPublished = false;
 
@@ -43,36 +63,72 @@ class Article
 
     public function getTitle(): ?string
     {
-        return $this->Title;
+        return $this->title;
     }
 
-    public function setTitle(string $Title): self
+    public function setTitle(string $title): self
     {
-        $this->Title = $Title;
+        $this->title = $title;
+
+        return $this;
+    }
+
+    public function getSlug()
+    {
+        return $this->slug;
+    }
+
+    public function setSlug($slug): self
+    {
+        $this->slug = $slug;
+
+        return $this;
+    }
+
+    public function getPrimaryImage(): ?string
+    {
+        return $this->primaryImage;
+    }
+
+    public function setPrimaryImage(string $primaryImage): self
+    {
+        $this->primaryImage = $primaryImage;
+
+        return $this;
+    }
+
+    public function getSecondaryImage(): ?string
+    {
+        return $this->secondaryImage;
+    }
+
+    public function setSecondaryImage(?string $secondaryImage): self
+    {
+        $this->secondaryImage = $secondaryImage;
 
         return $this;
     }
 
     public function getContent(): ?string
     {
-        return $this->Content;
+        return $this->content;
     }
 
-    public function setContent(string $Content): self
+    public function setContent(string $content): self
     {
-        $this->Content = $Content;
+        $this->content = $content;
 
         return $this;
     }
 
-    public function getMedia(): ?string
+    public function getSummary(): ?string
     {
-        return $this->Media;
+        return $this->summary;
     }
 
-    public function setMedia(?string $Media): self
+    public function setSummary(string $summary): self
     {
-        $this->Media = $Media;
+        $this->summary = $summary;
 
         return $this;
     }
@@ -82,7 +138,7 @@ class Article
         return $this->isPublished;
     }
 
-    public function setIsPublished(?bool $isPublished): self
+    public function setIsPublished(bool $isPublished): self
     {
         $this->isPublished = $isPublished;
 

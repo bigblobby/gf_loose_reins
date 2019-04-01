@@ -19,7 +19,7 @@ class PageController extends AbstractController
 
     /**
      * @Route("/{mainSlug}/{slug}", name="app_default_page",
-     *   requirements={"mainSlug": "cabins|lodges|loose-reins-country|out-and-about|pantry|loose-talk|reviews"},
+     *   requirements={"mainSlug": "cabins|lodges|loose-reins-country|out-and-about|pantry|reviews"},
      *   defaults={"slug": ""}
      * )
      */
@@ -28,7 +28,7 @@ class PageController extends AbstractController
         // This returns an array of 1 item
         $mainNav = $em->getRepository(Navigation::class)->findBy(['slug' => $mainSlug, 'parent' => null], [], 1);
 
-        $subPages = $mainNav[0]->getNavigations();
+        $subLinks = $mainNav[0]->getNavigations();
         $mainPage = $mainNav[0]->getPage();
 
         // If sub link is clicked
@@ -38,13 +38,13 @@ class PageController extends AbstractController
             $subPage = $subNav->getPage();
 
             return $this->render('page/sub-page.html.twig', [
-                'subPages' => $subPages,
+                'subLinks' => $subLinks,
                 'subPage' => $subPage
             ]);
         }
 
         return $this->render('page/main-page.html.twig', [
-            'subPages' => $subPages,
+            'subLinks' => $subLinks,
             'mainPage' => $mainPage
         ]);
     }

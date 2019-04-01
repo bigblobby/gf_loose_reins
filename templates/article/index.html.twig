@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ArticleController!{% endblock %}
+
+{% block body %}
+    <div style="background-color: grey; height: 500px;"></div>
+
+    {# @var article \App\Entity\Article #}
+    {% for article in articles %}
+        <a href="{{ path('app_article_post', { 'slug': article.slug }) }}">{{ article.id }}</a>
+    {% endfor %}
+
+
+    <div style="background-color: grey; height: 500px;"></div>
+{% endblock %}

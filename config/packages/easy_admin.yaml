@@ -7,6 +7,7 @@ easy_admin:
         menu:
             - {entity: 'Homepage', icon: 'home'}
             - {entity: 'Navigation', icon: 'link'}
+            - {entity: 'Article', icon: 'sticky-note'}
             - {entity: 'Page', icon: 'sticky-note'}
             - {entity: 'Panel', icon: 'table'}
             - {entity: 'ContactUs', icon: 'envelope', label: 'Contact'}
@@ -48,8 +49,23 @@ easy_admin:
                     - 'parent'
                     - 'navigations'
                     - 'page'
+        Article:
+            class: App\Entity\Article
+            form:
+                fields:
+                    - 'title'
+                    - 'primaryImage'
+                    - 'secondaryImage'
+                    - 'summary'
+                    - {property: 'content', type: 'fos_ckeditor'}
+                    - 'isPublished'
         Page:
             class: App\Entity\Page
+            form:
+                fields:
+                    - 'title'
+                    - 'image'
+                    - 'navigation'
         Panel:
             class: App\Entity\Panel
             form:

@@ -25,6 +25,7 @@ class AppExtension extends AbstractExtension
             // parameter: ['is_safe' => ['html']]
             // Reference: https://twig.symfony.com/doc/2.x/advanced.html#automatic-escaping
             new TwigFilter('json_decode', [$this, 'decodeJSON']),
+            new TwigFilter('first_slug', [$this, 'firstSlug'])
         ];
     }
 
@@ -38,6 +39,11 @@ class AppExtension extends AbstractExtension
     public function decodeJSON($value)
     {
         return json_decode($value);
+    }
+
+    public function firstSlug($url)
+    {
+        return explode('/', $url)[1];
     }
 
     public function loadMainNavigation()

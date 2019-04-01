@@ -17,9 +17,16 @@
         <ul class="bottom-nav">
 
             {# @var link \App\Entity\MainPage #}
-            {% for link in main_navigation() %}
-                <li><a class="{{ link.slug == app.request.attributes.get('mainSlug') ? 'active' }}" href="{{ path('app_default_page', {'mainSlug': link.slug}) }}">{{ link.title}}</a></li>
-            {% endfor %}
+            {#{% for link in main_navigation() %}#}
+                {#<li><a class="{{ link.slug == app.request.pathInfo|first_slug ? 'active' }}" href="{{ path('app_default_page', {'mainSlug': link.slug}) }}">{{ link.title}}</a></li>#}
+            {#{% endfor %}#}
+            <li><a class="{{ 'cabins' == app.request.pathInfo|first_slug ? 'active' }}" href="{{ path('app_default_page', {'mainSlug': 'cabins'}) }}">Cabins</a></li>
+            <li><a class="{{ 'lodges' == app.request.pathInfo|first_slug ? 'active' }}" href="{{ path('app_default_page', {'mainSlug': 'lodges'}) }}">Lodges</a></li>
+            <li><a class="{{ 'loose-reins-country' == app.request.pathInfo|first_slug ? 'active' }}" href="{{ path('app_default_page', {'mainSlug': 'loose-reins-country'}) }}">Loose Reins Country</a></li>
+            <li><a class="{{ 'out-and-about' == app.request.pathInfo|first_slug ? 'active' }}" href="{{ path('app_default_page', {'mainSlug': 'out-and-about'}) }}">Out and About</a></li>
+            <li><a class="{{ 'pantry' == app.request.pathInfo|first_slug ? 'active' }}" href="{{ path('app_default_page', {'mainSlug': 'pantry'}) }}">Pantry</a></li>
+            <li><a class="{{ 'loose-talk' == app.request.pathInfo|first_slug ? 'active' }}" href="{{ path('app_article_index') }}">Loose Talk</a></li>
+            <li><a class="{{ 'reviews' == app.request.pathInfo|first_slug ? 'active' }}" href="{{ path('app_default_page', {'mainSlug': 'reviews'}) }}">Reviews</a></li>
 
             <li class="mobile-nav-item"><a href="#">Book</a></li>
             <li class="mobile-nav-item"><a href="#">Before you book</a></li>
@@ -29,13 +36,13 @@
         </ul>
     </div>
 
-    {# @var sublink \App\Entity\Page #}
-    {% if subPages is defined %}
+    {# @var sublink \App\Entity\Navigation #}
+    {% if subLinks is defined %}
         <div class="dropdown-nav-container">
             <ul class="dropdown-nav">
-                {% for subPage in subPages %}
-                    {% if subPage.title is not empty %}
-                        <li><a class="sublink {{ subPage.slug == app.request.attributes.get('slug') ? 'active' }}" href="{{ path('app_default_page', {'mainSlug': subPage.parent.slug, 'slug': subPage.slug }) }}">{{ subPage.title }}</a></li>
+                {% for sublink in subLinks %}
+                    {% if sublink.title is not empty %}
+                        <li><a class="sublink {{ sublink.slug == app.request.attributes.get('slug') ? 'active' }}" href="{{ path('app_default_page', {'mainSlug': sublink.parent.slug, 'slug': sublink.slug }) }}">{{ sublink.title }}</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
