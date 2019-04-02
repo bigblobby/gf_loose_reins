@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Article;
+use App\Entity\Page;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
@@ -16,7 +17,10 @@ class ArticleController extends AbstractController
     {
         $articles = $em->getRepository(Article::class)->findAllPublishedArticles();
 
+        $page = $em->getRepository(Page::class)->findOneBy(['id' => '6']);
+
         return $this->render('article/index.html.twig', [
+            'page' => $page,
             'articles' => $articles
         ]);
     }

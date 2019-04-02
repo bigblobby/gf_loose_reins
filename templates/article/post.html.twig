@@ -1,12 +1,25 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <div style="background-color: grey; height: 500px;"></div>
 
-    {{ article.title }}
-    {{ article.content|raw }}
+    <div class="article-page-header" style="background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.1),rgba(0,0,0,0),rgba(0,0,0,0)),url('{{ article.primaryImage }}')"></div>
 
-    <div style="background-color: grey; height: 500px;"></div>
+        <div class="row article">
+            <div class="col-7 content p-5">
+                <h1>{{ article.title }}</h1>
+                <span class="mb-4">{{ article.createdAt|date('jS F, Y') }}</span>
+                <div>
+                    {{ article.content|raw }}
+                </div>
+                {% if article.secondaryImage != '' %}
+                    <img src="{{ asset(article.secondaryImage) }}" alt="blank">
+                {% endif %}
+            </div>
+            <div class="col-5 related-articles">
+
+            </div>
+        </div>
+
 {% endblock %}
 
 

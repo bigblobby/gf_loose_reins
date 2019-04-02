@@ -3,13 +3,26 @@
 {% block title %}Hello ArticleController!{% endblock %}
 
 {% block body %}
-    <div style="background-color: grey; height: 500px;"></div>
+
+    {#--------------TITLE AND BANNER IMAGE--------------#}
+    {% include "panels/partials/page-header.html.twig" with {"title": page.title,"image": page.image} %}
 
     {# @var article \App\Entity\Article #}
-    {% for article in articles %}
-        <a href="{{ path('app_article_post', { 'slug': article.slug }) }}">{{ article.id }}</a>
-    {% endfor %}
+    <div class="article-container d-flex flex-wrap flex-grow-1">
+        {% for article in articles %}
+            <div class="driver-wrapper">
+                <a class="driver-container" href="{{ path('app_article_post', { 'slug': article.slug }) }}">
+                    <div class="image-container">
+                        <img src="{{ article.primaryImage }}" alt="">
+                    </div>
+                    <div class="content-container">
+                        <h2>{{ article.title }}</h2>
+                        <h3>{{ article.createdAt|date('jS F, Y') }}</h3>
+                        <p>{{ article.summary }}</p>
+                    </div>
+                </a>
+            </div>
+        {% endfor %}
+    </div>
 
-
-    <div style="background-color: grey; height: 500px;"></div>
 {% endblock %}
