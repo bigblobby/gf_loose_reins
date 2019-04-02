@@ -1,8 +1,9 @@
 .page-header {
+    background-color: #504b23;
 
     .page-image-container {
         position: relative;
-        //min-height: 500px;
+        height: 100%;
         background-color: #504b23;
 
         &:after {
@@ -23,35 +24,75 @@
         }
 
         .page-header-title {
-            position: absolute;
-            left: 0;
-            right: 0;
-            top: 55%;
 
             @include media-breakpoint-down(md){
                 top: 35%;
             }
+        }
+    }
+}
 
-            h1 {
-                font-size: 5.1rem;
-                font-family: 'Lora', serif;
-                font-weight: 700;
-                text-transform: uppercase;
-                text-align: center;
-                color: #fff;
+.empty-image-box {
+    position: relative;
+    height: 500px;
+    background-color: #504b23;
 
-                @include media-breakpoint-down(md){
-                    font-size: 3.8rem;
-                }
+    @include media-breakpoint-down(md){
+        height: 400px;
+    }
 
-                @include media-breakpoint-down(sm){
-                    font-size: 3rem;
-                }
+    @include media-breakpoint-down(sm){
+        height: 300px;
+    }
 
-                @include media-breakpoint-down(xs){
-                    font-size: 2rem;
-                }
-            }
+    @include media-breakpoint-down(xs){
+        height: 200px;
+    }
+
+    .page-header-title {
+        @include media-breakpoint-down(md){
+            top: 55%;
+        }
+
+        @include media-breakpoint-down(sm){
+            top: 65%;
+        }
+
+        @include media-breakpoint-down(xs){
+            top: 75%;
+        }
+    }
+}
+
+// Used for both .page-header and .empty-image-box
+.page-header-title {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 55%;
+
+    @include media-breakpoint-down(md){
+        top: 35%;
+    }
+
+    h1 {
+        font-size: 5.1rem;
+        font-family: 'Lora', serif;
+        font-weight: 700;
+        text-transform: uppercase;
+        text-align: center;
+        color: #fff;
+
+        @include media-breakpoint-down(md){
+            font-size: 3.8rem;
+        }
+
+        @include media-breakpoint-down(sm){
+            font-size: 3rem;
+        }
+
+        @include media-breakpoint-down(xs){
+            font-size: 2rem;
         }
     }
 }

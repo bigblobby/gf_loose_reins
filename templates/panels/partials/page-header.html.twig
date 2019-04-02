@@ -1,8 +1,17 @@
-<div class="page-header">
-    <div class="page-image-container">
-        <img src="{{ asset(image) }}" alt="">
+{% if image != '' %}
+    <div class="page-header">
+        <div class="page-image-container">
+            <img src="{{ asset(image) }}" alt="">
+            <div class="page-header-title">
+                <h1>{{ title }}</h1>
+            </div>
+        </div>
+    </div>
+{% else %}
+    <div class="empty-image-box">
         <div class="page-header-title">
             <h1>{{ title }}</h1>
         </div>
     </div>
-</div>
+{% endif %}
+
