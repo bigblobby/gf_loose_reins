@@ -125,11 +125,6 @@ class Navigation
         return $this;
     }
 
-    public function __toString()
-    {
-        return $this->getTitle();
-    }
-
     public function getPage(): ?Page
     {
         return $this->page;
@@ -145,5 +140,10 @@ class Navigation
         }
 
         return $this;
+    }
+
+    public function __toString()
+    {
+        return $this->getTitle();
     }
 }

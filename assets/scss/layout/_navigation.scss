@@ -5,85 +5,57 @@
     right: 0;
     transition: all 0.2s ease-in-out;
 
-    // WHEN SCROLLING
-
-    // @todo REFACTOR .scrolling
-    &.scrolling{
-        @include media-breakpoint-up(lg){
-            background-color: #504b23;
-            position: fixed;
-            left: 0;
-            right: 0;
-
-            .top-nav-container {
-                .top-nav {
-                    height: 40px;
-                    transition: all 0.2s ease-in-out;
-                }
-            }
-
-            .logo-container {
-                margin-bottom: 0;
-                .main-logo {
-                    width: 250px;
-                    margin-bottom: 1rem;
-                    transition: all 0.2s ease-in-out;
-                }
-            }
-
-            .bottom-nav-container {
-                .bottom-nav {
-                    //margin-bottom: 0.5rem;
-                    transition: all 0.2s ease-in-out;
-                }
-            }
-        }
-
-        @include media-breakpoint-down(lg){
-            .top-nav-container {
-                .top-nav {
-                    height: 30px;
-                    transition: all 0.2s ease-in-out;
-                }
-            }
-
-            .logo-container {
-                margin-bottom: 0;
-                .main-logo {
-                    width: 250px;
-                    margin-bottom: 0;
-                    transition: all 0.2s ease-in-out;
-                }
-            }
-
-            .bottom-nav-container {
-                .bottom-nav {
-                    //margin-bottom: 0.5rem;
-                    transition: all 0.2s ease-in-out;
-                }
-            }
-        }
-
-        @include media-breakpoint-down(md) {
-            .logo-container {
-                .main-logo {
-                    width: 100%;
-                }
-            }
-
-            .bottom-nav-container {
-                .bottom-nav {
-                   //margin-bottom: 1rem;
-                }
-            }
-        }
-    }
-
     @include media-breakpoint-down(md){
         position: absolute;
         background-color: #504b23;
     }
 
+    // WHEN SCROLLING
+    &.scrolling{
+        background-color: #504b23;
+        position: fixed;
+        left: 0;
+        right: 0;
+
+        @include media-breakpoint-down(md){
+            position: absolute;
+        }
+
+        .top-nav-container {
+            .top-nav {
+                height: 40px;
+                transition: all 0.2s ease-in-out;
+
+                @include media-breakpoint-down(lg){
+                    height: 30px;
+                }
+            }
+        }
+
+        .logo-container {
+            margin-bottom: 0;
+
+            .main-logo {
+                width: 250px;
+                margin-bottom: 1rem;
+                transition: all 0.2s ease-in-out;
+
+                @include media-breakpoint-down(lg){
+                    margin-bottom: 0;
+                }
+
+                @include media-breakpoint-down(md) {
+                    width: 100%;
+                }
+            }
+        }
+
+        .bottom-nav-container {
+            .bottom-nav {
+                transition: all 0.2s ease-in-out;
+            }
+        }
+    }
 
     a {
         text-decoration: none;
@@ -271,7 +243,6 @@
             border: none;
             padding-bottom: 0.5rem;
             background-color: #504b23;
-            //-webkit-clip-path: polygon(0 0,100% 0,78% 100%,22% 100%);
             clip-path: polygon(0 0,100% 0,78% 100%,22% 100%);
 
             &:focus{
