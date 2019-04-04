@@ -66,6 +66,14 @@ easy_admin:
                     - 'title'
                     - 'image'
                     - 'navigation'
+                    -
+                        property: 'panels'
+                        type: 'collection'
+                        type_options:
+                            entry_type: App\Form\PanelFormType
+                            allow_delete: true
+                            allow_add: true
+                            by_reference: false
         Panel:
             class: App\Entity\Panel
             form:

@@ -38,7 +38,7 @@ class Page
     private $navigation;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Panel", mappedBy="page")
+     * @ORM\OneToMany(targetEntity="App\Entity\Panel", mappedBy="page", cascade={"persist"})
      * @ORM\OrderBy({"weight" = "ASC"})
      */
     private $panels;
