@@ -49,6 +49,8 @@ class LoginFormAuthenticator extends AbstractFormLoginAuthenticator
             'password' => $request->request->get('password'),
             'csrf_token' => $request->request->get('_csrf_token'),
         ];
+
+        // Remembers the value of the username field if we fail login
         $request->getSession()->set(
             Security::LAST_USERNAME,
             $credentials['username']
@@ -81,10 +83,12 @@ class LoginFormAuthenticator extends AbstractFormLoginAuthenticator
 
     public function onAuthenticationSuccess(Request $request, TokenInterface $token, $providerKey)
     {
+        // Redirects to the page we just tried to access if login is successful
         if ($targetPath = $this->getTargetPath($request->getSession(), $providerKey)) {
             return new RedirectResponse($targetPath);
         }
 
+        // Redirects to this page if we go to the login page explicitly
         return new RedirectResponse($this->urlGenerator->generate('app_default_homepage'));
     }
 
