@@ -23,12 +23,12 @@ class ArticleRepository extends ServiceEntityRepository
     //  * @return Article[] Returns an array of Article objects
     //  */
 
-    public function findAllPublishedArticles()
+    public function findAllPublishedArticlesOrderedByNewest()
     {
         return $this->createQueryBuilder('a')
             ->andWhere('a.isPublished = :val')
             ->setParameter('val', true)
-            ->orderBy('a.id', 'ASC')
+            ->orderBy('a.createdAt', 'DESC')
             ->getQuery()
             ->getResult()
         ;

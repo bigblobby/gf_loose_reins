@@ -15,7 +15,7 @@ class ArticleController extends AbstractController
      */
     public function indexAction(EntityManagerInterface $em)
     {
-        $articles = $em->getRepository(Article::class)->findAllPublishedArticles();
+        $articles = $em->getRepository(Article::class)->findAllPublishedArticlesOrderedByNewest();
 
         $page = $em->getRepository(Page::class)->findOneBy(['id' => '6']);
 
